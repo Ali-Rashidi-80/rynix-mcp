@@ -1,0 +1,12 @@
+{
+  "stack": "generic",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/health"
+    }
+  ],
+  "warnings": [
+    "generic_extractor_used"
+  ]
+}

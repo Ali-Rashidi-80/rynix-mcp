@@ -1,0 +1,13 @@
+{
+  "stack": "fastapi",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/items/{item_id}"
+    },
+    {
+      "method": "POST",
+      "path": "/finance/case-fee-receipts/{event_id}/purge"
+    }
+  ]
+}

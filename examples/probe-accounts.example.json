@@ -1,0 +1,10 @@
+{
+  "client": { "username": "REPLACE_ME", "password_env": "RYNIX_PROBE_PASSWORD" },
+  "secretary": { "username": "REPLACE_ME", "password_env": "RYNIX_PROBE_PASSWORD" },
+  "intern": { "username": "REPLACE_ME", "password_env": "RYNIX_PROBE_PASSWORD" },
+  "lawyer": { "username": "REPLACE_ME", "password_env": "RYNIX_PROBE_PASSWORD" },
+  "ceo": { "username": "REPLACE_ME", "password_env": "RYNIX_PROBE_PASSWORD_CEO" },
+  "admin": { "username": "REPLACE_ME", "password_env": "RYNIX_PROBE_PASSWORD" },
+  "legal_deputy": { "username": "REPLACE_ME", "password_env": "RYNIX_PROBE_PASSWORD" },
+  "psychologist": { "username": "REPLACE_ME", "password_env": "RYNIX_PROBE_PASSWORD" }
+}

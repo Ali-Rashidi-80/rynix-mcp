@@ -1,0 +1,10 @@
+{
+  "rules": [
+    { "id": "RYNIX-API1-IDOR", "owasp": "API1:2023", "cwe": "CWE-639" },
+    { "id": "RYNIX-API2-AUTH", "owasp": "API2:2023", "cwe": "CWE-287" },
+    { "id": "RYNIX-API5-BFLA", "owasp": "API5:2023", "cwe": "CWE-285" },
+    { "id": "RYNIX-STATIC-RISK", "owasp": "API8:2023", "cwe": "CWE-200" },
+    { "id": "RYNIX-STATIC-SECRET", "owasp": "API2:2023", "cwe": "CWE-798" },
+    { "id": "RYNIX-STEALTH-BYPASS", "owasp": "API8:2023", "cwe": "CWE-200" }
+  ]
+}

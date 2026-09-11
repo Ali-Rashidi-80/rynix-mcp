@@ -1,0 +1,7 @@
+extend = "../mcp-server/pyproject.toml"
+
+[lint]
+ignore = ["E402", "S603", "S607", "PLW1510", "B007", "SIM102", "SIM115", "F841"]
+
+[lint.per-file-ignores]
+"**" = ["T201"]

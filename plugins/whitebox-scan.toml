@@ -1,0 +1,9 @@
+id = "whitebox-scan"
+display_name = "Rynix Whitebox Analyzer"
+binary = ""
+requires_scope_check = false
+requires_llm = false
+output_format = "sarif"
+mcp_tool = "plugin_whitebox_scan"
+phase = "6e"
+enabled = true

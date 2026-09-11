@@ -1,0 +1,10 @@
+services:
+  rynix-mcp:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    ports:
+      - "8090:8090"
+    environment:
+      RYNIX_SERVE_TOKEN: ${RYNIX_SERVE_TOKEN:?RYNIX_SERVE_TOKEN is required}
+    restart: unless-stopped

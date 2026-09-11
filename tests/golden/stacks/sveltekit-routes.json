@@ -1,0 +1,13 @@
+{
+  "stack": "sveltekit",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/dashboard"
+    },
+    {
+      "method": "GET",
+      "path": "/account"
+    }
+  ]
+}

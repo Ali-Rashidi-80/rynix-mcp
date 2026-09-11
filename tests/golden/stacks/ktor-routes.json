@@ -1,0 +1,9 @@
+{
+  "stack": "ktor",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/users"
+    }
+  ]
+}

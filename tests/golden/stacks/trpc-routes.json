@@ -1,0 +1,9 @@
+{
+  "stack": "trpc",
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/trpc/users.query"
+    }
+  ]
+}

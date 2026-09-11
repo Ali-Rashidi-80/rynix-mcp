@@ -1,0 +1,13 @@
+{
+  "stack": "graphql",
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/graphql"
+    },
+    {
+      "method": "POST",
+      "path": "/graphql#users"
+    }
+  ]
+}

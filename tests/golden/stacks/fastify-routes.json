@@ -1,0 +1,13 @@
+{
+  "stack": "fastify",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/health"
+    },
+    {
+      "method": "POST",
+      "path": "/users"
+    }
+  ]
+}

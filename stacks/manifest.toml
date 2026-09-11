@@ -1,0 +1,1341 @@
+# Multi-stack manifest — multi-stack parity coverage
+
+[[stack]]
+id = "fastapi"
+tier = 1
+extractor = "dedicated"
+golden = "tests/golden/stacks/fastapi-routes.json"
+cargo_test = "fastapi_extracts_routes"
+knowledge = "knowledge/frameworks/fastapi.md"
+profile = "profiles/fastapi.toml"
+
+[[stack]]
+id = "django"
+tier = 1
+extractor = "dedicated"
+golden = "tests/golden/stacks/django-routes.json"
+cargo_test = "django_extracts_routes"
+knowledge = "knowledge/frameworks/django.md"
+profile = "profiles/django.toml"
+
+[[stack]]
+id = "flask"
+tier = 1
+extractor = "dedicated"
+golden = "tests/golden/stacks/flask-routes.json"
+cargo_test = "flask_extracts_routes"
+knowledge = "knowledge/frameworks/flask.md"
+profile = "profiles/flask.toml"
+
+[[stack]]
+id = "express"
+tier = 1
+extractor = "dedicated"
+golden = "tests/golden/stacks/express-routes.json"
+cargo_test = "express_extracts_routes"
+knowledge = "knowledge/frameworks/express.md"
+profile = "profiles/express.toml"
+
+[[stack]]
+id = "nestjs"
+tier = 1
+extractor = "dedicated"
+golden = "tests/golden/stacks/nestjs-routes.json"
+cargo_test = "nestjs_extracts_routes"
+knowledge = "knowledge/frameworks/nestjs.md"
+profile = "profiles/nestjs.toml"
+
+[[stack]]
+id = "fastify"
+tier = 1
+extractor = "dedicated"
+golden = "tests/golden/stacks/fastify-routes.json"
+cargo_test = "fastify_extracts_routes"
+knowledge = "knowledge/frameworks/fastify.md"
+profile = "profiles/fastify.toml"
+
+[[stack]]
+id = "gin"
+tier = 1
+extractor = "dedicated"
+golden = "tests/golden/stacks/gin-routes.json"
+cargo_test = "gin_extracts_routes"
+knowledge = "knowledge/frameworks/gin.md"
+profile = "profiles/gin.toml"
+
+[[stack]]
+id = "spring"
+tier = 1
+extractor = "dedicated"
+golden = "tests/golden/stacks/spring-routes.json"
+cargo_test = "spring_extracts_routes"
+knowledge = "knowledge/frameworks/spring.md"
+profile = "profiles/spring.toml"
+
+[[stack]]
+id = "aspnet"
+tier = 1
+extractor = "dedicated"
+golden = "tests/golden/stacks/aspnet-routes.json"
+cargo_test = "aspnet_extracts_routes"
+knowledge = "knowledge/frameworks/aspnet.md"
+profile = "profiles/aspnet.toml"
+
+[[stack]]
+id = "laravel"
+tier = 1
+extractor = "dedicated"
+golden = "tests/golden/stacks/laravel-routes.json"
+cargo_test = "laravel_extracts_routes"
+knowledge = "knowledge/frameworks/laravel.md"
+profile = "profiles/laravel.toml"
+
+[[stack]]
+id = "rails"
+tier = 1
+extractor = "dedicated"
+golden = "tests/golden/stacks/rails-routes.json"
+cargo_test = "rails_extracts_routes"
+knowledge = "knowledge/frameworks/rails.md"
+profile = "profiles/rails.toml"
+
+[[stack]]
+id = "react"
+tier = 1
+extractor = "dedicated"
+golden = "tests/golden/stacks/react-routes.json"
+cargo_test = "react_extracts_routes"
+knowledge = "knowledge/frameworks/react.md"
+profile = "profiles/react.toml"
+
+[[stack]]
+id = "nextjs"
+tier = 1
+extractor = "dedicated"
+golden = "tests/golden/stacks/nextjs-routes.json"
+cargo_test = "nextjs_extracts_routes"
+knowledge = "knowledge/frameworks/nextjs.md"
+profile = "profiles/nextjs.toml"
+
+[[stack]]
+id = "vue"
+tier = 1
+extractor = "dedicated"
+golden = "tests/golden/stacks/vue-routes.json"
+cargo_test = "vue_extracts_routes"
+knowledge = "knowledge/frameworks/vue.md"
+profile = "profiles/vue.toml"
+
+[[stack]]
+id = "nuxt"
+tier = 1
+extractor = "dedicated"
+golden = "tests/golden/stacks/nuxt-routes.json"
+cargo_test = "nuxt_extracts_routes"
+knowledge = "knowledge/frameworks/nuxt.md"
+profile = "profiles/nuxt.toml"
+
+[[stack]]
+id = "angular"
+tier = 1
+extractor = "dedicated"
+golden = "tests/golden/stacks/angular-routes.json"
+cargo_test = "angular_extracts_routes"
+knowledge = "knowledge/frameworks/angular.md"
+profile = "profiles/angular.toml"
+
+[[stack]]
+id = "sveltekit"
+tier = 1
+extractor = "dedicated"
+golden = "tests/golden/stacks/sveltekit-routes.json"
+cargo_test = "sveltekit_extracts_routes"
+knowledge = "knowledge/frameworks/sveltekit.md"
+profile = "profiles/sveltekit.toml"
+
+[[stack]]
+id = "graphql"
+tier = 1
+extractor = "dedicated"
+golden = "tests/golden/stacks/graphql-routes.json"
+cargo_test = "graphql_extracts_routes"
+knowledge = "knowledge/frameworks/graphql.md"
+profile = "profiles/graphql.toml"
+
+[[stack]]
+id = "trpc"
+tier = 1
+extractor = "dedicated"
+golden = "tests/golden/stacks/trpc-routes.json"
+cargo_test = "trpc_extracts_routes"
+knowledge = "knowledge/frameworks/trpc.md"
+profile = "profiles/trpc.toml"
+
+[[stack]]
+id = "openapi"
+tier = 1
+extractor = "dedicated"
+golden = "tests/golden/stacks/openapi-routes.json"
+cargo_test = "openapi_extracts_routes"
+knowledge = "knowledge/frameworks/openapi.md"
+profile = "profiles/openapi.toml"
+
+[[stack]]
+id = "echo"
+tier = 2
+extractor = "dedicated"
+golden = "tests/golden/stacks/echo-routes.json"
+cargo_test = "echo_extracts_routes"
+knowledge = "knowledge/frameworks/echo.md"
+profile = "profiles/echo.toml"
+
+[[stack]]
+id = "fiber"
+tier = 2
+extractor = "dedicated"
+golden = "tests/golden/stacks/fiber-routes.json"
+cargo_test = "fiber_extracts_routes"
+knowledge = "knowledge/frameworks/fiber.md"
+profile = "profiles/fiber.toml"
+
+[[stack]]
+id = "chi"
+tier = 2
+extractor = "dedicated"
+golden = "tests/golden/stacks/chi-routes.json"
+cargo_test = "chi_extracts_routes"
+knowledge = "knowledge/frameworks/chi.md"
+profile = "profiles/chi.toml"
+
+[[stack]]
+id = "axum"
+tier = 2
+extractor = "dedicated"
+golden = "tests/golden/stacks/axum-routes.json"
+cargo_test = "axum_extracts_routes"
+knowledge = "knowledge/frameworks/axum.md"
+profile = "profiles/axum.toml"
+
+[[stack]]
+id = "actix"
+tier = 2
+extractor = "dedicated"
+golden = "tests/golden/stacks/actix-routes.json"
+cargo_test = "actix_extracts_routes"
+knowledge = "knowledge/frameworks/actix.md"
+profile = "profiles/actix.toml"
+
+[[stack]]
+id = "koa"
+tier = 2
+extractor = "dedicated"
+golden = "tests/golden/stacks/koa-routes.json"
+cargo_test = "koa_extracts_routes"
+knowledge = "knowledge/frameworks/koa.md"
+profile = "profiles/koa.toml"
+
+[[stack]]
+id = "hono"
+tier = 2
+extractor = "dedicated"
+golden = "tests/golden/stacks/hono-routes.json"
+cargo_test = "hono_extracts_routes"
+knowledge = "knowledge/frameworks/hono.md"
+profile = "profiles/hono.toml"
+
+[[stack]]
+id = "adonisjs"
+tier = 2
+extractor = "dedicated"
+golden = "tests/golden/stacks/adonisjs-routes.json"
+cargo_test = "adonisjs_extracts_routes"
+knowledge = "knowledge/frameworks/adonisjs.md"
+profile = "profiles/adonisjs.toml"
+
+[[stack]]
+id = "symfony"
+tier = 2
+extractor = "dedicated"
+golden = "tests/golden/stacks/symfony-routes.json"
+cargo_test = "symfony_extracts_routes"
+knowledge = "knowledge/frameworks/symfony.md"
+profile = "profiles/symfony.toml"
+
+[[stack]]
+id = "quarkus"
+tier = 2
+extractor = "dedicated"
+golden = "tests/golden/stacks/quarkus-routes.json"
+cargo_test = "quarkus_extracts_routes"
+knowledge = "knowledge/frameworks/quarkus.md"
+profile = "profiles/quarkus.toml"
+
+[[stack]]
+id = "ktor"
+tier = 2
+extractor = "dedicated"
+golden = "tests/golden/stacks/ktor-routes.json"
+cargo_test = "ktor_extracts_routes"
+knowledge = "knowledge/frameworks/ktor.md"
+profile = "profiles/ktor.toml"
+
+[[stack]]
+id = "sinatra"
+tier = 2
+extractor = "dedicated"
+golden = "tests/golden/stacks/sinatra-routes.json"
+cargo_test = "sinatra_extracts_routes"
+knowledge = "knowledge/frameworks/sinatra.md"
+profile = "profiles/sinatra.toml"
+
+[[stack]]
+id = "phoenix"
+tier = 2
+extractor = "dedicated"
+golden = "tests/golden/stacks/phoenix-routes.json"
+cargo_test = "phoenix_extracts_routes"
+knowledge = "knowledge/frameworks/phoenix.md"
+profile = "profiles/phoenix.toml"
+
+[[stack]]
+id = "crystal"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "dart"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "haskell"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "perl"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "scala"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "swift"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "zig"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "elixir-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "php-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "ruby-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "python-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "node-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "go-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "rust-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "java-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "csharp-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "kotlin-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "cpp-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "amber"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "lucky"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "aqueduct"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "shelf"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "angel"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "plug"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "grape"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "padrino"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "micronaut"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "dropwizard"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "spark-java"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "play-framework"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "yesod"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "scotty"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "servant"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "slim"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "codeigniter"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "cakephp"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "yii"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "tornado"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "pyramid"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "bottle"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "starlette"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "rocket"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "warp"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "actix-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "akka-http"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "play-scala"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "vapor"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "perfect"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "catalyst"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "mojolicious"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "dancer"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "crow"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "pistache"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "drogon"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "jester"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "lapis"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "plumber"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "compojure"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "reitit"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "pedestal"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "luminus"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "nitrogen"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "n2o"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "beego"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "buffalo"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "iris"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "martini"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "revel"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "sanic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "cherrypy"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "web2py"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "feathers"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "loopback"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "meteor"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "sails"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "strapi"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "keystone"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "redwood"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "blazor"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "minimal-api"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "nancy"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "servicestack"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "cowboy"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "nerves"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "opencart"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "magento"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "drupal"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "wordpress-api"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "joomla"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "typo3"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "openapi-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "grpc-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "soap-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "websocket-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "mux"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "gorilla"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "go-zero"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "hyper"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "actix-web-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "rocket-rs"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "lumen"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "zend"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "cakephp3"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "vertx"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "javalin"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "deno-fresh"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "deno-oak"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "oak"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "bun-hono"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "camping"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "cuba"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "lotus"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "mack"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "ramaze"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "rack"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "kemal"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "dart-frog"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "dancer2"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "http4s"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "perfect-swift"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "zig-zap"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "zig-httptool"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "aiohttp"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "falcon"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "hug"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "responder"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "robyn"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "litestar"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "ktor-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "spring-webflux"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "micronaut-kotlin"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "aspnet-mvc"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "nancyfx"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "symfony-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "laravel-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "express-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "koa-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "nestjs-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "rails-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "sinatra-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "phoenix-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "next-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "nuxt-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "vue-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "graphql-generic"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "grpc-gateway"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "wasmcloud"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "wasm-http"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"
+
+[[stack]]
+id = "serverless-offline"
+tier = 3
+extractor = "generic"
+golden = "tests/golden/stacks/generic-routes.json"
+cargo_test = "generic_extracts_routes"

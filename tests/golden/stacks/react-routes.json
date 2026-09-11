@@ -1,0 +1,13 @@
+{
+  "stack": "react",
+  "frontend_routes": [
+    {
+      "path": "/dashboard",
+      "file": "src/App.tsx"
+    },
+    {
+      "path": "/cases",
+      "file": "src/App.tsx"
+    }
+  ]
+}

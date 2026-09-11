@@ -1,0 +1,13 @@
+{
+  "stack": "chi",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/health"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/items/{id}"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "rynix-mcp": {
+      "command": "${workspaceFolder}/mcp-server/.venv/bin/python",
+      "args": ["-m", "rynix_mcp"],
+      "cwd": "${workspaceFolder}/mcp-server",
+      "env": {
+        "RYNIX_TEMPLATE_SCAN_BIN": "${workspaceFolder}/bin/template-scan"
+      }
+    }
+  }
+}

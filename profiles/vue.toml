@@ -1,0 +1,27 @@
+name = "vue"
+display_name = "Rynix Profile: vue"
+stack = ["vue"]
+
+[paths]
+api_endpoints = "backend/app/api"
+frontend_src = "src"
+
+[scope]
+allow_hosts = ["localhost", "127.0.0.1"]
+
+[auth]
+login_path = "/api/auth/login"
+auth_markers = ["authenticate", "authorize", "auth"]
+
+[brief]
+concerns = ["IDOR", "auth bypass", "injection"]
+focus = ["API routes", "role matrix"]
+context = ["Auto-generated Tier-1 stack profile for vue"]
+
+[risk]
+object_paths_pattern = "/{id}"
+discovery_roles = ["user", "admin"]
+
+[[risk.idor_role_pairs]]
+low = "user"
+high = "admin"

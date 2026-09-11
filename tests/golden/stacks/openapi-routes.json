@@ -1,0 +1,13 @@
+{
+  "stack": "openapi",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/v1/users"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/items"
+    }
+  ]
+}

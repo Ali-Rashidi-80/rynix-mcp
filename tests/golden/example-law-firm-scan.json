@@ -1,0 +1,3539 @@
+{
+  "schema": "rynix.scan.v1",
+  "repo_path": "examples/example-law-firm",
+  "profile_hint": "example-law-firm",
+  "modules_scanned": 23,
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/",
+      "file": "backend/app/api/v1/endpoints/activities.py",
+      "line": 96,
+      "handler": "get_activities",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/actions",
+      "file": "backend/app/api/v1/endpoints/activities.py",
+      "line": 301,
+      "handler": "get_action_types",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/capabilities",
+      "file": "backend/app/api/v1/endpoints/ai.py",
+      "line": 162,
+      "handler": "get_ai_capabilities",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/nl-search-parse",
+      "file": "backend/app/api/v1/endpoints/ai.py",
+      "line": 198,
+      "handler": "nl_search_parse",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/rag/ingest",
+      "file": "backend/app/api/v1/endpoints/ai.py",
+      "line": 207,
+      "handler": "rag_ingest",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/rag/retrieve",
+      "file": "backend/app/api/v1/endpoints/ai.py",
+      "line": 224,
+      "handler": "rag_retrieve",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/jobs",
+      "file": "backend/app/api/v1/endpoints/ai.py",
+      "line": 246,
+      "handler": "create_ai_job",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/jobs/{job_id}",
+      "file": "backend/app/api/v1/endpoints/ai.py",
+      "line": 376,
+      "handler": "get_ai_job",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/scan-extract",
+      "file": "backend/app/api/v1/endpoints/ai.py",
+      "line": 397,
+      "handler": "scan_extract_endpoint",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/bulk-delete",
+      "file": "backend/app/api/v1/endpoints/appointments.py",
+      "line": 291,
+      "handler": "bulk_delete_appointments",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/google/exchange",
+      "file": "backend/app/api/v1/endpoints/auth.py",
+      "line": 481,
+      "handler": "exchange_google_oauth_code",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "file": "backend/app/api/v1/endpoints/auth_requests.py",
+      "line": 234,
+      "handler": "list_auth_requests",
+      "auth_required": true,
+      "auth_hint": "Depends(require_roles([UserRole.ADMIN, UserRole.CEO])),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/",
+      "file": "backend/app/api/v1/endpoints/auth_requests.py",
+      "line": 264,
+      "handler": "create_auth_request",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 10
+    },
+    {
+      "method": "PUT",
+      "path": "/{request_id}/approve",
+      "file": "backend/app/api/v1/endpoints/auth_requests.py",
+      "line": 374,
+      "handler": "approve_auth_request",
+      "auth_required": true,
+      "auth_hint": "Depends(require_roles([UserRole.ADMIN, UserRole.CEO])),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "PUT",
+      "path": "/{request_id}/reject",
+      "file": "backend/app/api/v1/endpoints/auth_requests.py",
+      "line": 588,
+      "handler": "reject_auth_request",
+      "auth_required": true,
+      "auth_hint": "Depends(require_roles([UserRole.ADMIN, UserRole.CEO])),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/me",
+      "file": "backend/app/api/v1/endpoints/auth_requests.py",
+      "line": 663,
+      "handler": "list_my_auth_requests",
+      "auth_required": true,
+      "auth_hint": "Depends(require_roles([UserRole.ADMIN, UserRole.CEO])),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/{request_id}",
+      "file": "backend/app/api/v1/endpoints/auth_requests.py",
+      "line": 677,
+      "handler": "get_auth_request",
+      "auth_required": true,
+      "auth_hint": "Depends(require_roles([UserRole.ADMIN, UserRole.CEO])),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/latest",
+      "file": "backend/app/api/v1/endpoints/backups.py",
+      "line": 100,
+      "handler": "get_latest_backup",
+      "auth_required": true,
+      "auth_hint": "current_user: Annotated[User, Depends(require_admin)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/debug/status",
+      "file": "backend/app/api/v1/endpoints/backups.py",
+      "line": 114,
+      "handler": "backup_debug_status",
+      "auth_required": true,
+      "auth_hint": "current_user: Annotated[User, Depends(require_admin)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/trigger",
+      "file": "backend/app/api/v1/endpoints/backups.py",
+      "line": 196,
+      "handler": "trigger_backup",
+      "auth_required": true,
+      "auth_hint": "current_user: Annotated[User, Depends(require_admin)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "DELETE",
+      "path": "/cleanup",
+      "file": "backend/app/api/v1/endpoints/backups.py",
+      "line": 240,
+      "handler": "cleanup_old_backups",
+      "auth_required": true,
+      "auth_hint": "current_user: Annotated[User, Depends(require_admin)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/dl/{slug}",
+      "file": "backend/app/api/v1/endpoints/backups.py",
+      "line": 262,
+      "handler": "download_secure_link",
+      "auth_required": true,
+      "auth_hint": "current_user: Annotated[User, Depends(require_admin)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/{backup_path:path}",
+      "file": "backend/app/api/v1/endpoints/backups.py",
+      "line": 311,
+      "handler": "download_backup",
+      "auth_required": true,
+      "auth_hint": "current_user: Annotated[User, Depends(require_admin)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/{case_id}/messages",
+      "file": "backend/app/api/v1/endpoints/cases.py",
+      "line": 1660,
+      "handler": "send_case_message",
+      "auth_required": true,
+      "auth_hint": "current_user: Annotated[User, Depends(require_case_message)],",
+      "idor_risk_score": 25
+    },
+    {
+      "method": "GET",
+      "path": "/{case_id}/messages",
+      "file": "backend/app/api/v1/endpoints/cases.py",
+      "line": 1768,
+      "handler": "list_case_messages",
+      "auth_required": true,
+      "auth_hint": "current_user: Annotated[User, Depends(require_case_message)],",
+      "idor_risk_score": 25
+    },
+    {
+      "method": "POST",
+      "path": "/{case_id}/messages/{message_id}/poll-delivery",
+      "file": "backend/app/api/v1/endpoints/cases.py",
+      "line": 1801,
+      "handler": "poll_case_message_delivery_endpoint",
+      "auth_required": true,
+      "auth_hint": "current_user: Annotated[User, Depends(require_case_message)],",
+      "idor_risk_score": 25
+    },
+    {
+      "method": "GET",
+      "path": "/summary",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 54,
+      "handler": "ceo_calendar_summary",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/widgets",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 73,
+      "handler": "ceo_calendar_widgets",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/events",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 85,
+      "handler": "list_ceo_events",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/tabs/{tab}/kpis",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 141,
+      "handler": "ceo_calendar_tab_kpis",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 90
+    },
+    {
+      "method": "GET",
+      "path": "/report",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 182,
+      "handler": "ceo_calendar_report",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/availability",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 199,
+      "handler": "check_availability",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/events/{event_id}",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 218,
+      "handler": "get_ceo_event",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 90
+    },
+    {
+      "method": "POST",
+      "path": "/events/{event_id}/approve",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 243,
+      "handler": "approve_ceo_event",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 90
+    },
+    {
+      "method": "POST",
+      "path": "/events/{event_id}/reject",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 262,
+      "handler": "reject_ceo_event",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 90
+    },
+    {
+      "method": "PATCH",
+      "path": "/events/{event_id}",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 281,
+      "handler": "update_ceo_event",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 90
+    },
+    {
+      "method": "POST",
+      "path": "/events/{event_id}/cancel",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 304,
+      "handler": "cancel_ceo_event",
+      "auth_required": true,
+      "auth_hint": "current_user: Annotated[User, Depends(require_roles([UserRole.CEO]))],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/events/{event_id}/result",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 323,
+      "handler": "record_ceo_event_result",
+      "auth_required": true,
+      "auth_hint": "current_user: Annotated[User, Depends(require_roles([UserRole.CEO]))],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/events/{event_id}/status",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 342,
+      "handler": "transition_ceo_event_status",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 90
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "file": "backend/app/api/v1/endpoints/clients.py",
+      "line": 162,
+      "handler": "list_clients",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/",
+      "file": "backend/app/api/v1/endpoints/clients.py",
+      "line": 431,
+      "handler": "create_client",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/{client_id}",
+      "file": "backend/app/api/v1/endpoints/clients.py",
+      "line": 480,
+      "handler": "get_client",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/by-national-id/{national_id}",
+      "file": "backend/app/api/v1/endpoints/clients.py",
+      "line": 550,
+      "handler": "get_client_by_national_id",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/by-id-number/{id_number}",
+      "file": "backend/app/api/v1/endpoints/clients.py",
+      "line": 585,
+      "handler": "get_client_by_id_number",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "PUT",
+      "path": "/{client_id}",
+      "file": "backend/app/api/v1/endpoints/clients.py",
+      "line": 615,
+      "handler": "update_client",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "DELETE",
+      "path": "/{client_id}",
+      "file": "backend/app/api/v1/endpoints/clients.py",
+      "line": 645,
+      "handler": "delete_client",
+      "auth_required": true,
+      "auth_hint": "Depends(",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/bulk-delete",
+      "file": "backend/app/api/v1/endpoints/clients.py",
+      "line": 678,
+      "handler": "bulk_delete_clients",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/lookup",
+      "file": "backend/app/api/v1/endpoints/contracts_finance.py",
+      "line": 126,
+      "handler": "contract_lookup",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/cases-by-archive",
+      "file": "backend/app/api/v1/endpoints/contracts_finance.py",
+      "line": 152,
+      "handler": "get_cases_by_archive",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/bylaw-share-preview",
+      "file": "backend/app/api/v1/endpoints/contracts_finance.py",
+      "line": 162,
+      "handler": "get_bylaw_share_preview",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/{contract_id}/financial-context",
+      "file": "backend/app/api/v1/endpoints/contracts_finance.py",
+      "line": 208,
+      "handler": "get_financial_context",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/{contract_id}/case-allocations",
+      "file": "backend/app/api/v1/endpoints/contracts_finance.py",
+      "line": 218,
+      "handler": "post_case_allocation",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "PUT",
+      "path": "/{contract_id}/agreement-draft",
+      "file": "backend/app/api/v1/endpoints/contracts_finance.py",
+      "line": 249,
+      "handler": "put_agreement_draft",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/{contract_id}/agreement-draft",
+      "file": "backend/app/api/v1/endpoints/contracts_finance.py",
+      "line": 269,
+      "handler": "get_agreement_draft",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/{contract_id}/agreement-finalize",
+      "file": "backend/app/api/v1/endpoints/contracts_finance.py",
+      "line": 279,
+      "handler": "post_agreement_finalize",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/{contract_id}/financial-terms",
+      "file": "backend/app/api/v1/endpoints/contracts_finance.py",
+      "line": 297,
+      "handler": "post_financial_terms",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/{contract_id}/correct-number",
+      "file": "backend/app/api/v1/endpoints/contracts_finance.py",
+      "line": 328,
+      "handler": "post_correct_number",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/summary",
+      "file": "backend/app/api/v1/endpoints/dashboard.py",
+      "line": 90,
+      "handler": "get_dashboard_summary",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(deps.get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/registration-cases",
+      "file": "backend/app/api/v1/endpoints/dashboard.py",
+      "line": 258,
+      "handler": "get_registration_month_cases",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(deps.get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/stats",
+      "file": "backend/app/api/v1/endpoints/dashboard.py",
+      "line": 306,
+      "handler": "get_dashboard_stats_legacy",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(deps.get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/cases/summary",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 232,
+      "handler": "get_cases_summary",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/cases",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 241,
+      "handler": "get_cases_list",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/occasional-incomes/summary",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 281,
+      "handler": "get_occasional_summary",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/occasional-incomes",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 290,
+      "handler": "get_occasional_list",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/occasional-incomes",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 302,
+      "handler": "post_occasional",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/occasional-incomes/{income_id}/reverse",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 365,
+      "handler": "post_occasional_reverse",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/occasional-incomes/{income_id}/purge",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 382,
+      "handler": "post_occasional_purge",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/occasional-incomes/{income_id}/correct",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 399,
+      "handler": "post_occasional_correct",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/cases/comparison/summary",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 448,
+      "handler": "get_comparison_summary",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/accounts",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 458,
+      "handler": "list_accounts",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/policies/active",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 480,
+      "handler": "get_active_finance_policy",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/policies/beneficiaries",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 490,
+      "handler": "list_finance_policy_beneficiaries",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/policies",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 504,
+      "handler": "create_finance_policy_version",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/service-types",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 524,
+      "handler": "list_service_types",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/cases/{case_id}/payments",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 572,
+      "handler": "post_case_payment",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/case-fee-receipts/{event_id}/reverse",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 597,
+      "handler": "post_case_fee_receipt_reverse",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/case-fee-receipts/{event_id}/purge",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 616,
+      "handler": "post_case_fee_receipt_purge",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/case-fee-receipts/{event_id}/correct",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 633,
+      "handler": "post_case_fee_receipt_correct",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/cases/{case_id}/profile",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 671,
+      "handler": "get_case_finance_profile",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/cases/{case_id}/invoice",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 682,
+      "handler": "get_case_finance_invoice",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/cases/export",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 693,
+      "handler": "export_cases",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/office/summary",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 745,
+      "handler": "get_office_summary",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/occasional-incomes/export",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 756,
+      "handler": "export_occasional",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/ledgers/receipts",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 786,
+      "handler": "get_ledger_receipts",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/ledgers/payments",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 803,
+      "handler": "get_ledger_payments",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/ledgers/payments",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 838,
+      "handler": "post_ledger_payment",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/ledgers/payments/{event_id}/reverse",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 856,
+      "handler": "post_ledger_payment_reverse",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/ledgers/payments/{event_id}/purge",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 877,
+      "handler": "post_ledger_payment_purge",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/ledgers/payments/{event_id}/correct",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 894,
+      "handler": "post_ledger_payment_correct",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/ledgers/installments",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 930,
+      "handler": "get_ledger_installments",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/ledgers/installments/export",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 946,
+      "handler": "export_ledger_installments",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/expenses",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 975,
+      "handler": "get_expenses",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/expenses",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 992,
+      "handler": "post_expense",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/contracts/{contract_id}/release-events",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1054,
+      "handler": "get_contract_release_events",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/release-events/{release_event_id}/disburse",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1066,
+      "handler": "post_release_event_disburse",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/expenses/{expense_id}/reverse",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1085,
+      "handler": "post_expense_reverse",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/expenses/{expense_id}/purge",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1103,
+      "handler": "post_expense_purge",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/expenses/{expense_id}/correct",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1120,
+      "handler": "post_expense_correct",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/obligations/{obligation_id}/adjust",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1153,
+      "handler": "post_obligation_adjust",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/tax/summary",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1173,
+      "handler": "get_tax_summary",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/reports/series",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1184,
+      "handler": "get_finance_reports_series",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/staff/summary",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1195,
+      "handler": "get_staff_finance_summary",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/staff/shares/entries",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1206,
+      "handler": "get_staff_share_entries",
+      "auth_required": true,
+      "auth_hint": "db: AsyncSession = Depends(get_db),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "file": "backend/app/api/v1/endpoints/legal_documents.py",
+      "line": 186,
+      "handler": "list_legal_documents",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "PATCH",
+      "path": "/{document_id}",
+      "file": "backend/app/api/v1/endpoints/legal_documents.py",
+      "line": 262,
+      "handler": "update_legal_document",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/{document_id}",
+      "file": "backend/app/api/v1/endpoints/legal_documents.py",
+      "line": 334,
+      "handler": "get_legal_document",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/hidden-partners",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 111,
+      "handler": "list_hidden_partners",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(deps.get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/hidden-partners/{partner_id}",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 120,
+      "handler": "hide_conversation_partner",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(deps.get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "DELETE",
+      "path": "/hidden-partners/{partner_id}",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 130,
+      "handler": "unhide_conversation_partner",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(deps.get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/conversations",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 140,
+      "handler": "get_conversations",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(deps.get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/bulk-delete",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 351,
+      "handler": "bulk_delete_messages",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(deps.get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/{partner_id}",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 439,
+      "handler": "get_messages",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(deps.get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/attachments/upload",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 501,
+      "handler": "upload_message_attachment",
+      "auth_required": true,
+      "auth_hint": "current_user: Annotated[models.User, Depends(deps.get_current_user)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "DELETE",
+      "path": "/attachments",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 592,
+      "handler": "delete_unused_message_attachment",
+      "auth_required": true,
+      "auth_hint": "current_user: Annotated[models.User, Depends(deps.get_current_user)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/{message_id}/attachment",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 658,
+      "handler": "download_message_attachment",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(deps.get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 692,
+      "handler": "create_message",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(deps.get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/{partner_id}/read",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 826,
+      "handler": "mark_conversation_as_read",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(deps.get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "PATCH",
+      "path": "/{message_id}",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 892,
+      "handler": "update_message",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(deps.get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "DELETE",
+      "path": "/{message_id}",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 938,
+      "handler": "delete_message",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(deps.get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/bulk-delete",
+      "file": "backend/app/api/v1/endpoints/payments.py",
+      "line": 217,
+      "handler": "bulk_delete_payments",
+      "auth_required": true,
+      "auth_hint": "Depends(",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/lawyer/bulk-delete",
+      "file": "backend/app/api/v1/endpoints/payments.py",
+      "line": 424,
+      "handler": "bulk_delete_lawyer_payments",
+      "auth_required": true,
+      "auth_hint": "Depends(",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 1565,
+      "handler": "list_referral_visits",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 1940,
+      "handler": "create_referral_visit",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/lookup/by-national-id/{national_id}",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2004,
+      "handler": "lookup_referral_visit_by_national_id",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/lookup/by-admission-form/{admission_form_number}",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2030,
+      "handler": "lookup_referral_visit_by_admission_form",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/{visit_id}/client-cheques",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2054,
+      "handler": "list_referral_client_cheques",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/messages/bulk",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2124,
+      "handler": "bulk_send_referral_visit_messages",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/messages/{message_id}/poll-delivery",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2295,
+      "handler": "poll_referral_visit_message_delivery",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/{visit_id}/messages",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2318,
+      "handler": "send_referral_visit_message",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/{visit_id}/messages",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2466,
+      "handler": "list_referral_visit_messages",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/{visit_id}/messages/{message_id}/image/download",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2499,
+      "handler": "download_referral_message_image",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/{visit_id}/admission-images",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2541,
+      "handler": "list_referral_admission_images",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/{visit_id}/admission-images",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2552,
+      "handler": "upload_referral_admission_image",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/{visit_id}/admission-images/{image_id}/download",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2578,
+      "handler": "download_referral_admission_image",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/{visit_id}/admission-images/{image_id}/replace",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2610,
+      "handler": "replace_referral_admission_image",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/{visit_id}",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2663,
+      "handler": "get_referral_visit",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "PATCH",
+      "path": "/{visit_id}",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2683,
+      "handler": "update_referral_visit",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/bulk-delete",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2766,
+      "handler": "bulk_delete_referral_visits",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "DELETE",
+      "path": "/{visit_id}",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2818,
+      "handler": "delete_referral_visit",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(get_db)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/compose-preview",
+      "file": "backend/app/api/v1/endpoints/sms_console.py",
+      "line": 158,
+      "handler": "preview_sms_compose",
+      "auth_required": true,
+      "auth_hint": "_current_user: Annotated[User, Depends(require_roles(_SMS_COMPOSE_ROLES))],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/status",
+      "file": "backend/app/api/v1/endpoints/sms_console.py",
+      "line": 168,
+      "handler": "get_sms_console_status",
+      "auth_required": true,
+      "auth_hint": "User, Depends(require_roles([UserRole.ADMIN, UserRole.CEO]))",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/credit",
+      "file": "backend/app/api/v1/endpoints/sms_console.py",
+      "line": 194,
+      "handler": "get_sms_console_credit",
+      "auth_required": true,
+      "auth_hint": "User, Depends(require_roles([UserRole.ADMIN, UserRole.CEO]))",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/patterns",
+      "file": "backend/app/api/v1/endpoints/sms_console.py",
+      "line": 253,
+      "handler": "list_sms_patterns",
+      "auth_required": true,
+      "auth_hint": "User, Depends(require_roles([UserRole.ADMIN, UserRole.CEO]))",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/send-manual",
+      "file": "backend/app/api/v1/endpoints/sms_console.py",
+      "line": 263,
+      "handler": "send_manual_sms",
+      "auth_required": true,
+      "auth_hint": "User, Depends(require_roles([UserRole.ADMIN, UserRole.CEO]))",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/callback",
+      "file": "backend/app/api/v1/endpoints/sms_deliveries.py",
+      "line": 124,
+      "handler": "receive_sms_delivery_callback",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/{delivery_id}/poll",
+      "file": "backend/app/api/v1/endpoints/sms_deliveries.py",
+      "line": 211,
+      "handler": "poll_sms_delivery_status",
+      "auth_required": true,
+      "auth_hint": "Depends(require_roles([\"ADMIN\", \"CEO\"])),",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/legal/stats",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 209,
+      "handler": "legal_staff_stats",
+      "auth_required": true,
+      "auth_hint": "Depends(require_roles([UserRole.ADMIN, UserRole.CEO, UserRole.LEGAL_DEPUTY])),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/provisioning-gaps",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 215,
+      "handler": "staff_provisioning_gaps",
+      "auth_required": true,
+      "auth_hint": "Depends(require_roles([UserRole.ADMIN, UserRole.CEO, UserRole.LEGAL_DEPUTY])),",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/legal",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 274,
+      "handler": "list_legal_staff",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/administrative/stats",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 310,
+      "handler": "administrative_staff_stats",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/administrative",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 317,
+      "handler": "list_administrative_staff",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 620,
+      "handler": "create_staff",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 10
+    },
+    {
+      "method": "PATCH",
+      "path": "/{staff_id}",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 657,
+      "handler": "update_staff",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 90
+    },
+    {
+      "method": "DELETE",
+      "path": "/{staff_id}",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 696,
+      "handler": "delete_staff",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 90
+    },
+    {
+      "method": "POST",
+      "path": "/{staff_id}/documents/{doc_type}",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 733,
+      "handler": "upload_staff_document",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 90
+    },
+    {
+      "method": "POST",
+      "path": "/{staff_id}/attachments/{category}",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 766,
+      "handler": "upload_staff_attachment",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 90
+    },
+    {
+      "method": "DELETE",
+      "path": "/{staff_id}/attachments",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 799,
+      "handler": "delete_staff_attachment",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 90
+    },
+    {
+      "method": "POST",
+      "path": "/{staff_id}/abandon-draft",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 825,
+      "handler": "abandon_staff_registration_draft",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 90
+    },
+    {
+      "method": "GET",
+      "path": "/{staff_id}/cooperation-history",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 855,
+      "handler": "staff_cooperation_history",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 90
+    },
+    {
+      "method": "GET",
+      "path": "/{staff_id}/performance",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 883,
+      "handler": "staff_performance_summary",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 90
+    },
+    {
+      "method": "GET",
+      "path": "/{staff_id}/audit-trail",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 966,
+      "handler": "staff_audit_trail",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 90
+    },
+    {
+      "method": "GET",
+      "path": "/{staff_id}/change-history",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 979,
+      "handler": "staff_profile_change_history",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 90
+    },
+    {
+      "method": "GET",
+      "path": "/{staff_id}/disciplinary",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 992,
+      "handler": "list_disciplinary_records",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 90
+    },
+    {
+      "method": "GET",
+      "path": "/{staff_id}/management-notes",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 1077,
+      "handler": "list_management_notes",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 90
+    },
+    {
+      "method": "GET",
+      "path": "/{staff_id}/management-orders",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 1110,
+      "handler": "list_management_orders",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 90
+    },
+    {
+      "method": "POST",
+      "path": "/backfill",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 1177,
+      "handler": "backfill_staff",
+      "auth_required": true,
+      "auth_hint": "_: Annotated[User, Depends(require_roles([UserRole.ADMIN]))],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/ingest",
+      "file": "backend/app/api/v1/endpoints/sync.py",
+      "line": 163,
+      "handler": "ingest_sync_event",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(deps.get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/ingest-batch",
+      "file": "backend/app/api/v1/endpoints/sync.py",
+      "line": 193,
+      "handler": "ingest_sync_batch",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(deps.get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/outbox-status",
+      "file": "backend/app/api/v1/endpoints/sync.py",
+      "line": 377,
+      "handler": "outbox_status",
+      "auth_required": true,
+      "auth_hint": "db: Annotated[AsyncSession, Depends(deps.get_db)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/manifest",
+      "file": "backend/app/api/v1/endpoints/sync_files.py",
+      "line": 148,
+      "handler": "get_file_manifest",
+      "auth_required": true,
+      "auth_hint": "current_user: Annotated[User, Depends(deps.get_current_active_superuser)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/upload",
+      "file": "backend/app/api/v1/endpoints/sync_files.py",
+      "line": 269,
+      "handler": "upload_file_sync",
+      "auth_required": true,
+      "auth_hint": "current_user: Annotated[User, Depends(deps.get_current_active_superuser)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/delete",
+      "file": "backend/app/api/v1/endpoints/sync_files.py",
+      "line": 427,
+      "handler": "delete_file_sync",
+      "auth_required": true,
+      "auth_hint": "current_user: Annotated[User, Depends(deps.get_current_active_superuser)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/download",
+      "file": "backend/app/api/v1/endpoints/sync_files.py",
+      "line": 518,
+      "handler": "download_file_sync_by_query",
+      "auth_required": true,
+      "auth_hint": "current_user: Annotated[User, Depends(deps.get_current_active_superuser)],",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/download/{filename:path}",
+      "file": "backend/app/api/v1/endpoints/sync_files.py",
+      "line": 532,
+      "handler": "download_file_sync",
+      "auth_required": true,
+      "auth_hint": "current_user: Annotated[User, Depends(deps.get_current_active_superuser)],",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/services/status",
+      "file": "backend/app/api/v1/endpoints/system.py",
+      "line": 608,
+      "handler": "get_services_status",
+      "auth_required": true,
+      "auth_hint": "@router.get(\"/services/status\", dependencies=[Depends(require_roles([UserRole.ADMIN]))])",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/services/cache-status",
+      "file": "backend/app/api/v1/endpoints/system.py",
+      "line": 653,
+      "handler": "get_public_cache_status",
+      "auth_required": false,
+      "auth_hint": null,
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/docker/containers",
+      "file": "backend/app/api/v1/endpoints/system.py",
+      "line": 1151,
+      "handler": "get_docker_containers",
+      "auth_required": true,
+      "auth_hint": "@router.get(\"/docker/containers\", dependencies=[Depends(verify_docker_access)])",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "GET",
+      "path": "/internal-logs/{log_type}",
+      "file": "backend/app/api/v1/endpoints/system.py",
+      "line": 1474,
+      "handler": "get_internal_logs",
+      "auth_required": true,
+      "auth_hint": "@router.get(\"/internal-logs/{log_type}\", dependencies=[Depends(verify_docker_access)])",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "GET",
+      "path": "/services/health-detail",
+      "file": "backend/app/api/v1/endpoints/system.py",
+      "line": 1608,
+      "handler": "get_services_health_detail",
+      "auth_required": true,
+      "auth_hint": "@router.get(\"/services/health-detail\", dependencies=[Depends(verify_docker_access)])",
+      "idor_risk_score": 10
+    },
+    {
+      "method": "POST",
+      "path": "/bulk-delete",
+      "file": "backend/app/api/v1/endpoints/users.py",
+      "line": 255,
+      "handler": "bulk_delete_users",
+      "auth_required": true,
+      "auth_hint": "Depends(require_roles([UserRole.ADMIN, UserRole.CEO])),",
+      "idor_risk_score": 10
+    }
+  ],
+  "frontend_routes": [
+    {
+      "path": "/cases/${caseId}/attachments/${resolvedId}/preview?${tokenQs}",
+      "file": "src/shared/api/caseApi.ts",
+      "line": 928
+    }
+  ],
+  "rbac_hints": [
+    {
+      "endpoint": "GET /",
+      "file": "backend/app/api/v1/endpoints/activities.py",
+      "line": 96,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /actions",
+      "file": "backend/app/api/v1/endpoints/activities.py",
+      "line": 301,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /nl-search-parse",
+      "file": "backend/app/api/v1/endpoints/ai.py",
+      "line": 198,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /rag/ingest",
+      "file": "backend/app/api/v1/endpoints/ai.py",
+      "line": 207,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /rag/retrieve",
+      "file": "backend/app/api/v1/endpoints/ai.py",
+      "line": 224,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /jobs",
+      "file": "backend/app/api/v1/endpoints/ai.py",
+      "line": 246,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /jobs/{job_id}",
+      "file": "backend/app/api/v1/endpoints/ai.py",
+      "line": 376,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /",
+      "file": "backend/app/api/v1/endpoints/auth_requests.py",
+      "line": 234,
+      "roles_detected": [
+        "ADMIN",
+        "CEO"
+      ],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "PUT /{request_id}/approve",
+      "file": "backend/app/api/v1/endpoints/auth_requests.py",
+      "line": 374,
+      "roles_detected": [
+        "ADMIN",
+        "CEO"
+      ],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "PUT /{request_id}/reject",
+      "file": "backend/app/api/v1/endpoints/auth_requests.py",
+      "line": 588,
+      "roles_detected": [
+        "ADMIN",
+        "CEO"
+      ],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /me",
+      "file": "backend/app/api/v1/endpoints/auth_requests.py",
+      "line": 663,
+      "roles_detected": [
+        "ADMIN",
+        "CEO"
+      ],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /{request_id}",
+      "file": "backend/app/api/v1/endpoints/auth_requests.py",
+      "line": 677,
+      "roles_detected": [
+        "ADMIN",
+        "CEO"
+      ],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /latest",
+      "file": "backend/app/api/v1/endpoints/backups.py",
+      "line": 100,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /debug/status",
+      "file": "backend/app/api/v1/endpoints/backups.py",
+      "line": 114,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /trigger",
+      "file": "backend/app/api/v1/endpoints/backups.py",
+      "line": 196,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "DELETE /cleanup",
+      "file": "backend/app/api/v1/endpoints/backups.py",
+      "line": 240,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /dl/{slug}",
+      "file": "backend/app/api/v1/endpoints/backups.py",
+      "line": 262,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /{backup_path:path}",
+      "file": "backend/app/api/v1/endpoints/backups.py",
+      "line": 311,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /{case_id}/messages",
+      "file": "backend/app/api/v1/endpoints/cases.py",
+      "line": 1660,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 25
+    },
+    {
+      "endpoint": "GET /{case_id}/messages",
+      "file": "backend/app/api/v1/endpoints/cases.py",
+      "line": 1768,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 25
+    },
+    {
+      "endpoint": "POST /{case_id}/messages/{message_id}/poll-delivery",
+      "file": "backend/app/api/v1/endpoints/cases.py",
+      "line": 1801,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 25
+    },
+    {
+      "endpoint": "GET /tabs/{tab}/kpis",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 141,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 90
+    },
+    {
+      "endpoint": "GET /events/{event_id}",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 218,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 90
+    },
+    {
+      "endpoint": "POST /events/{event_id}/approve",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 243,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 90
+    },
+    {
+      "endpoint": "POST /events/{event_id}/reject",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 262,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 90
+    },
+    {
+      "endpoint": "PATCH /events/{event_id}",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 281,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 90
+    },
+    {
+      "endpoint": "POST /events/{event_id}/cancel",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 304,
+      "roles_detected": [
+        "CEO"
+      ],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /events/{event_id}/result",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 323,
+      "roles_detected": [
+        "CEO"
+      ],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /events/{event_id}/status",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 342,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 90
+    },
+    {
+      "endpoint": "GET /",
+      "file": "backend/app/api/v1/endpoints/clients.py",
+      "line": 162,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /",
+      "file": "backend/app/api/v1/endpoints/clients.py",
+      "line": 431,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /{client_id}",
+      "file": "backend/app/api/v1/endpoints/clients.py",
+      "line": 480,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /by-national-id/{national_id}",
+      "file": "backend/app/api/v1/endpoints/clients.py",
+      "line": 550,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /by-id-number/{id_number}",
+      "file": "backend/app/api/v1/endpoints/clients.py",
+      "line": 585,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "PUT /{client_id}",
+      "file": "backend/app/api/v1/endpoints/clients.py",
+      "line": 615,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "DELETE /{client_id}",
+      "file": "backend/app/api/v1/endpoints/clients.py",
+      "line": 645,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /bulk-delete",
+      "file": "backend/app/api/v1/endpoints/clients.py",
+      "line": 678,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /lookup",
+      "file": "backend/app/api/v1/endpoints/contracts_finance.py",
+      "line": 126,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /cases-by-archive",
+      "file": "backend/app/api/v1/endpoints/contracts_finance.py",
+      "line": 152,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /bylaw-share-preview",
+      "file": "backend/app/api/v1/endpoints/contracts_finance.py",
+      "line": 162,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /{contract_id}/financial-context",
+      "file": "backend/app/api/v1/endpoints/contracts_finance.py",
+      "line": 208,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /{contract_id}/case-allocations",
+      "file": "backend/app/api/v1/endpoints/contracts_finance.py",
+      "line": 218,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "PUT /{contract_id}/agreement-draft",
+      "file": "backend/app/api/v1/endpoints/contracts_finance.py",
+      "line": 249,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /{contract_id}/agreement-draft",
+      "file": "backend/app/api/v1/endpoints/contracts_finance.py",
+      "line": 269,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /{contract_id}/agreement-finalize",
+      "file": "backend/app/api/v1/endpoints/contracts_finance.py",
+      "line": 279,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /{contract_id}/financial-terms",
+      "file": "backend/app/api/v1/endpoints/contracts_finance.py",
+      "line": 297,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /{contract_id}/correct-number",
+      "file": "backend/app/api/v1/endpoints/contracts_finance.py",
+      "line": 328,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /summary",
+      "file": "backend/app/api/v1/endpoints/dashboard.py",
+      "line": 90,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /registration-cases",
+      "file": "backend/app/api/v1/endpoints/dashboard.py",
+      "line": 258,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /stats",
+      "file": "backend/app/api/v1/endpoints/dashboard.py",
+      "line": 306,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /cases/summary",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 232,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /cases",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 241,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /occasional-incomes/summary",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 281,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /occasional-incomes",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 290,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /occasional-incomes",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 302,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /occasional-incomes/{income_id}/reverse",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 365,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /occasional-incomes/{income_id}/purge",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 382,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /occasional-incomes/{income_id}/correct",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 399,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /cases/comparison/summary",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 448,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /accounts",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 458,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /policies/active",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 480,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /policies/beneficiaries",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 490,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /policies",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 504,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /service-types",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 524,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /cases/{case_id}/payments",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 572,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /case-fee-receipts/{event_id}/reverse",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 597,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /case-fee-receipts/{event_id}/purge",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 616,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /case-fee-receipts/{event_id}/correct",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 633,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /cases/{case_id}/profile",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 671,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /cases/{case_id}/invoice",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 682,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /cases/export",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 693,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /office/summary",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 745,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /occasional-incomes/export",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 756,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /ledgers/receipts",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 786,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /ledgers/payments",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 803,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /ledgers/payments",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 838,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /ledgers/payments/{event_id}/reverse",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 856,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /ledgers/payments/{event_id}/purge",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 877,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /ledgers/payments/{event_id}/correct",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 894,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /ledgers/installments",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 930,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /ledgers/installments/export",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 946,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /expenses",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 975,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /expenses",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 992,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /contracts/{contract_id}/release-events",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1054,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /release-events/{release_event_id}/disburse",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1066,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /expenses/{expense_id}/reverse",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1085,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /expenses/{expense_id}/purge",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1103,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /expenses/{expense_id}/correct",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1120,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /obligations/{obligation_id}/adjust",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1153,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /tax/summary",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1173,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /reports/series",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1184,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /staff/summary",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1195,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /staff/shares/entries",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1206,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /",
+      "file": "backend/app/api/v1/endpoints/legal_documents.py",
+      "line": 186,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "PATCH /{document_id}",
+      "file": "backend/app/api/v1/endpoints/legal_documents.py",
+      "line": 262,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /{document_id}",
+      "file": "backend/app/api/v1/endpoints/legal_documents.py",
+      "line": 334,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /hidden-partners",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 111,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /hidden-partners/{partner_id}",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 120,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "DELETE /hidden-partners/{partner_id}",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 130,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /conversations",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 140,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /bulk-delete",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 351,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /{partner_id}",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 439,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /attachments/upload",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 501,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "DELETE /attachments",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 592,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /{message_id}/attachment",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 658,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 692,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /{partner_id}/read",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 826,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "PATCH /{message_id}",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 892,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "DELETE /{message_id}",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 938,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /bulk-delete",
+      "file": "backend/app/api/v1/endpoints/payments.py",
+      "line": 217,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /lawyer/bulk-delete",
+      "file": "backend/app/api/v1/endpoints/payments.py",
+      "line": 424,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 1565,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 1940,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /lookup/by-national-id/{national_id}",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2004,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /lookup/by-admission-form/{admission_form_number}",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2030,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /{visit_id}/client-cheques",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2054,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /messages/bulk",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2124,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /messages/{message_id}/poll-delivery",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2295,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /{visit_id}/messages",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2318,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /{visit_id}/messages",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2466,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /{visit_id}/messages/{message_id}/image/download",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2499,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /{visit_id}/admission-images",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2541,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /{visit_id}/admission-images",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2552,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /{visit_id}/admission-images/{image_id}/download",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2578,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /{visit_id}/admission-images/{image_id}/replace",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2610,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /{visit_id}",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2663,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "PATCH /{visit_id}",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2683,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /bulk-delete",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2766,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "DELETE /{visit_id}",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2818,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /compose-preview",
+      "file": "backend/app/api/v1/endpoints/sms_console.py",
+      "line": 158,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /status",
+      "file": "backend/app/api/v1/endpoints/sms_console.py",
+      "line": 168,
+      "roles_detected": [
+        "ADMIN",
+        "CEO"
+      ],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /credit",
+      "file": "backend/app/api/v1/endpoints/sms_console.py",
+      "line": 194,
+      "roles_detected": [
+        "ADMIN",
+        "CEO"
+      ],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /patterns",
+      "file": "backend/app/api/v1/endpoints/sms_console.py",
+      "line": 253,
+      "roles_detected": [
+        "ADMIN",
+        "CEO"
+      ],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /send-manual",
+      "file": "backend/app/api/v1/endpoints/sms_console.py",
+      "line": 263,
+      "roles_detected": [
+        "ADMIN",
+        "CEO"
+      ],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /{delivery_id}/poll",
+      "file": "backend/app/api/v1/endpoints/sms_deliveries.py",
+      "line": 211,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /legal/stats",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 209,
+      "roles_detected": [
+        "ADMIN",
+        "CEO",
+        "LEGAL_DEPUTY"
+      ],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /provisioning-gaps",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 215,
+      "roles_detected": [
+        "ADMIN",
+        "CEO",
+        "LEGAL_DEPUTY"
+      ],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "PATCH /{staff_id}",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 657,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 90
+    },
+    {
+      "endpoint": "DELETE /{staff_id}",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 696,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 90
+    },
+    {
+      "endpoint": "POST /{staff_id}/documents/{doc_type}",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 733,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 90
+    },
+    {
+      "endpoint": "POST /{staff_id}/attachments/{category}",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 766,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 90
+    },
+    {
+      "endpoint": "DELETE /{staff_id}/attachments",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 799,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 90
+    },
+    {
+      "endpoint": "POST /{staff_id}/abandon-draft",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 825,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 90
+    },
+    {
+      "endpoint": "GET /{staff_id}/cooperation-history",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 855,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 90
+    },
+    {
+      "endpoint": "GET /{staff_id}/performance",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 883,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 90
+    },
+    {
+      "endpoint": "GET /{staff_id}/audit-trail",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 966,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 90
+    },
+    {
+      "endpoint": "GET /{staff_id}/change-history",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 979,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 90
+    },
+    {
+      "endpoint": "GET /{staff_id}/disciplinary",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 992,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 90
+    },
+    {
+      "endpoint": "GET /{staff_id}/management-notes",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 1077,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 90
+    },
+    {
+      "endpoint": "GET /{staff_id}/management-orders",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 1110,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 90
+    },
+    {
+      "endpoint": "POST /backfill",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 1177,
+      "roles_detected": [
+        "ADMIN"
+      ],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /ingest",
+      "file": "backend/app/api/v1/endpoints/sync.py",
+      "line": 163,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /ingest-batch",
+      "file": "backend/app/api/v1/endpoints/sync.py",
+      "line": 193,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /outbox-status",
+      "file": "backend/app/api/v1/endpoints/sync.py",
+      "line": 377,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /manifest",
+      "file": "backend/app/api/v1/endpoints/sync_files.py",
+      "line": 148,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /upload",
+      "file": "backend/app/api/v1/endpoints/sync_files.py",
+      "line": 269,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /delete",
+      "file": "backend/app/api/v1/endpoints/sync_files.py",
+      "line": 427,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /download",
+      "file": "backend/app/api/v1/endpoints/sync_files.py",
+      "line": 518,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /download/{filename:path}",
+      "file": "backend/app/api/v1/endpoints/sync_files.py",
+      "line": 532,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /services/status",
+      "file": "backend/app/api/v1/endpoints/system.py",
+      "line": 608,
+      "roles_detected": [
+        "ADMIN"
+      ],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /docker/containers",
+      "file": "backend/app/api/v1/endpoints/system.py",
+      "line": 1151,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "GET /internal-logs/{log_type}",
+      "file": "backend/app/api/v1/endpoints/system.py",
+      "line": 1474,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "GET /services/health-detail",
+      "file": "backend/app/api/v1/endpoints/system.py",
+      "line": 1608,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    },
+    {
+      "endpoint": "POST /bulk-delete",
+      "file": "backend/app/api/v1/endpoints/users.py",
+      "line": 255,
+      "roles_detected": [
+        "ADMIN",
+        "CEO"
+      ],
+      "abac_helpers": [],
+      "idor_risk_score": 10
+    }
+  ],
+  "risk_surfaces": [
+    {
+      "path": "/bulk-delete",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/appointments.py",
+      "line": 291,
+      "reason": "high-risk keyword: bulk-delete",
+      "severity": "high",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/latest",
+      "method": "GET",
+      "file": "backend/app/api/v1/endpoints/backups.py",
+      "line": 100,
+      "reason": "high-risk keyword: backup",
+      "severity": "high",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/debug/status",
+      "method": "GET",
+      "file": "backend/app/api/v1/endpoints/backups.py",
+      "line": 114,
+      "reason": "high-risk keyword: backup",
+      "severity": "high",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/trigger",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/backups.py",
+      "line": 196,
+      "reason": "high-risk keyword: backup",
+      "severity": "high",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/cleanup",
+      "method": "DELETE",
+      "file": "backend/app/api/v1/endpoints/backups.py",
+      "line": 240,
+      "reason": "high-risk keyword: backup",
+      "severity": "high",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/dl/{slug}",
+      "method": "GET",
+      "file": "backend/app/api/v1/endpoints/backups.py",
+      "line": 262,
+      "reason": "high-risk keyword: backup",
+      "severity": "high",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/{backup_path:path}",
+      "method": "GET",
+      "file": "backend/app/api/v1/endpoints/backups.py",
+      "line": 311,
+      "reason": "high-risk keyword: backup",
+      "severity": "high",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/tabs/{tab}/kpis",
+      "method": "GET",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 141,
+      "reason": "path parameter without strong auth/ABAC markers",
+      "severity": "high",
+      "rule_id": "RYNIX-API1-IDOR"
+    },
+    {
+      "path": "/events/{event_id}",
+      "method": "GET",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 218,
+      "reason": "path parameter without strong auth/ABAC markers",
+      "severity": "high",
+      "rule_id": "RYNIX-API1-IDOR"
+    },
+    {
+      "path": "/events/{event_id}/approve",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 243,
+      "reason": "path parameter without strong auth/ABAC markers",
+      "severity": "high",
+      "rule_id": "RYNIX-API1-IDOR"
+    },
+    {
+      "path": "/events/{event_id}/reject",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 262,
+      "reason": "path parameter without strong auth/ABAC markers",
+      "severity": "high",
+      "rule_id": "RYNIX-API1-IDOR"
+    },
+    {
+      "path": "/events/{event_id}",
+      "method": "PATCH",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 281,
+      "reason": "path parameter without strong auth/ABAC markers",
+      "severity": "high",
+      "rule_id": "RYNIX-API1-IDOR"
+    },
+    {
+      "path": "/events/{event_id}/status",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/ceo_calendar.py",
+      "line": 342,
+      "reason": "path parameter without strong auth/ABAC markers",
+      "severity": "high",
+      "rule_id": "RYNIX-API1-IDOR"
+    },
+    {
+      "path": "/bulk-delete",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/clients.py",
+      "line": 678,
+      "reason": "high-risk keyword: bulk-delete",
+      "severity": "high",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/occasional-incomes/{income_id}/reverse",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 365,
+      "reason": "high-risk keyword: reverse",
+      "severity": "high",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/occasional-incomes/{income_id}/purge",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 382,
+      "reason": "high-risk keyword: purge",
+      "severity": "critical",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/case-fee-receipts/{event_id}/reverse",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 597,
+      "reason": "high-risk keyword: reverse",
+      "severity": "high",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/case-fee-receipts/{event_id}/purge",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 616,
+      "reason": "high-risk keyword: purge",
+      "severity": "critical",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/ledgers/payments/{event_id}/reverse",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 856,
+      "reason": "high-risk keyword: reverse",
+      "severity": "high",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/ledgers/payments/{event_id}/purge",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 877,
+      "reason": "high-risk keyword: purge",
+      "severity": "critical",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/expenses/{expense_id}/reverse",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1085,
+      "reason": "high-risk keyword: reverse",
+      "severity": "high",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/expenses/{expense_id}/purge",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 1103,
+      "reason": "high-risk keyword: purge",
+      "severity": "critical",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/bulk-delete",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/messages.py",
+      "line": 351,
+      "reason": "high-risk keyword: bulk-delete",
+      "severity": "high",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/bulk-delete",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/payments.py",
+      "line": 217,
+      "reason": "high-risk keyword: bulk-delete",
+      "severity": "high",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/lawyer/bulk-delete",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/payments.py",
+      "line": 424,
+      "reason": "high-risk keyword: bulk-delete",
+      "severity": "high",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/bulk-delete",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/referral_visits.py",
+      "line": 2766,
+      "reason": "high-risk keyword: bulk-delete",
+      "severity": "high",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/{staff_id}",
+      "method": "PATCH",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 657,
+      "reason": "path parameter without strong auth/ABAC markers",
+      "severity": "high",
+      "rule_id": "RYNIX-API1-IDOR"
+    },
+    {
+      "path": "/{staff_id}",
+      "method": "DELETE",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 696,
+      "reason": "path parameter without strong auth/ABAC markers",
+      "severity": "high",
+      "rule_id": "RYNIX-API1-IDOR"
+    },
+    {
+      "path": "/{staff_id}/documents/{doc_type}",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 733,
+      "reason": "path parameter without strong auth/ABAC markers",
+      "severity": "high",
+      "rule_id": "RYNIX-API1-IDOR"
+    },
+    {
+      "path": "/{staff_id}/attachments/{category}",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 766,
+      "reason": "path parameter without strong auth/ABAC markers",
+      "severity": "high",
+      "rule_id": "RYNIX-API1-IDOR"
+    },
+    {
+      "path": "/{staff_id}/attachments",
+      "method": "DELETE",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 799,
+      "reason": "path parameter without strong auth/ABAC markers",
+      "severity": "high",
+      "rule_id": "RYNIX-API1-IDOR"
+    },
+    {
+      "path": "/{staff_id}/abandon-draft",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 825,
+      "reason": "path parameter without strong auth/ABAC markers",
+      "severity": "high",
+      "rule_id": "RYNIX-API1-IDOR"
+    },
+    {
+      "path": "/{staff_id}/cooperation-history",
+      "method": "GET",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 855,
+      "reason": "path parameter without strong auth/ABAC markers",
+      "severity": "high",
+      "rule_id": "RYNIX-API1-IDOR"
+    },
+    {
+      "path": "/{staff_id}/performance",
+      "method": "GET",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 883,
+      "reason": "path parameter without strong auth/ABAC markers",
+      "severity": "high",
+      "rule_id": "RYNIX-API1-IDOR"
+    },
+    {
+      "path": "/{staff_id}/audit-trail",
+      "method": "GET",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 966,
+      "reason": "path parameter without strong auth/ABAC markers",
+      "severity": "high",
+      "rule_id": "RYNIX-API1-IDOR"
+    },
+    {
+      "path": "/{staff_id}/change-history",
+      "method": "GET",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 979,
+      "reason": "path parameter without strong auth/ABAC markers",
+      "severity": "high",
+      "rule_id": "RYNIX-API1-IDOR"
+    },
+    {
+      "path": "/{staff_id}/disciplinary",
+      "method": "GET",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 992,
+      "reason": "path parameter without strong auth/ABAC markers",
+      "severity": "high",
+      "rule_id": "RYNIX-API1-IDOR"
+    },
+    {
+      "path": "/{staff_id}/management-notes",
+      "method": "GET",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 1077,
+      "reason": "path parameter without strong auth/ABAC markers",
+      "severity": "high",
+      "rule_id": "RYNIX-API1-IDOR"
+    },
+    {
+      "path": "/{staff_id}/management-orders",
+      "method": "GET",
+      "file": "backend/app/api/v1/endpoints/staff.py",
+      "line": 1110,
+      "reason": "path parameter without strong auth/ABAC markers",
+      "severity": "high",
+      "rule_id": "RYNIX-API1-IDOR"
+    },
+    {
+      "path": "/bulk-delete",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/users.py",
+      "line": 255,
+      "reason": "high-risk keyword: bulk-delete",
+      "severity": "high",
+      "rule_id": "RYNIX-STATIC-RISK"
+    }
+  ],
+  "warnings": [],
+  "duration_ms": 134
+}

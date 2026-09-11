@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rynix.dev/schemas/profile.schema.json",
+  "title": "Rynix bundled profile",
+  "type": "object",
+  "required": ["name"],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "display_name": { "type": "string" },
+    "stack": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "paths": {
+      "type": "object",
+      "properties": {
+        "api_endpoints": { "type": "string" },
+        "frontend_src": { "type": "string" },
+        "auth_deps": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "allow_hosts": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "allow_cidrs": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "auth": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "risk_keywords": {
+      "type": "object",
+      "properties": {
+        "high": { "type": "array", "items": { "type": "string" } },
+        "block_unless_flag": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": true
+    },
+    "risk": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

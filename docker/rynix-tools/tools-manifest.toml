@@ -1,0 +1,106 @@
+# Rynix tools sidecar manifest
+count = 26
+
+[[tool]]
+name = "rynix-base64"
+path = "bin/rynix-base64"
+
+[[tool]]
+name = "rynix-cors-probe"
+path = "bin/rynix-cors-probe"
+
+[[tool]]
+name = "rynix-crawl"
+path = "bin/rynix-crawl"
+
+[[tool]]
+name = "rynix-dirb-lite"
+path = "bin/rynix-dirb-lite"
+
+[[tool]]
+name = "rynix-dns-probe"
+path = "bin/rynix-dns-probe"
+
+[[tool]]
+name = "rynix-file-fuzz"
+path = "bin/rynix-file-fuzz"
+
+[[tool]]
+name = "rynix-fuzz"
+path = "bin/rynix-fuzz"
+
+[[tool]]
+name = "rynix-graphql-introspect"
+path = "bin/rynix-graphql-introspect"
+
+[[tool]]
+name = "rynix-header-probe"
+path = "bin/rynix-header-probe"
+
+[[tool]]
+name = "rynix-http-probe"
+path = "bin/rynix-http-probe"
+
+[[tool]]
+name = "rynix-json-probe"
+path = "bin/rynix-json-probe"
+
+[[tool]]
+name = "rynix-jwt-alg-none"
+path = "bin/rynix-jwt-alg-none"
+
+[[tool]]
+name = "rynix-jwt-decode"
+path = "bin/rynix-jwt-decode"
+
+[[tool]]
+name = "rynix-nikto-lite"
+path = "bin/rynix-nikto-lite"
+
+[[tool]]
+name = "rynix-openapi-fetch"
+path = "bin/rynix-openapi-fetch"
+
+[[tool]]
+name = "rynix-rate-limit-probe"
+path = "bin/rynix-rate-limit-probe"
+
+[[tool]]
+name = "rynix-response-diff"
+path = "bin/rynix-response-diff"
+
+[[tool]]
+name = "rynix-robots-fetch"
+path = "bin/rynix-robots-fetch"
+
+[[tool]]
+name = "rynix-semgrep-lite"
+path = "bin/rynix-semgrep-lite"
+
+[[tool]]
+name = "rynix-sitemap-fetch"
+path = "bin/rynix-sitemap-fetch"
+
+[[tool]]
+name = "rynix-sqli-probe"
+path = "bin/rynix-sqli-probe"
+
+[[tool]]
+name = "rynix-ssrf-canary"
+path = "bin/rynix-ssrf-canary"
+
+[[tool]]
+name = "rynix-subdomain-brute"
+path = "bin/rynix-subdomain-brute"
+
+[[tool]]
+name = "rynix-tls-probe"
+path = "bin/rynix-tls-probe"
+
+[[tool]]
+name = "rynix-url-encode"
+path = "bin/rynix-url-encode"
+
+[[tool]]
+name = "rynix-websocket-probe"
+path = "bin/rynix-websocket-probe"

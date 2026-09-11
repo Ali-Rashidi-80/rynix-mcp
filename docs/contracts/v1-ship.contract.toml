@@ -1,0 +1,46 @@
+[contract]
+name = "rynix-mcp-v1-ship"
+
+[[evidence]]
+id = "rust-tests"
+kind = "shell"
+command = "cargo test --manifest-path rynix-core/Cargo.toml"
+
+[[evidence]]
+id = "python-tests"
+kind = "shell"
+command = "uv run --directory mcp-server pytest -q"
+
+[[evidence]]
+id = "mcp-self-audit"
+kind = "shell"
+command = "python scripts/mcp_self_audit.py"
+
+[[evidence]]
+id = "wstg-knowledge-count"
+kind = "shell"
+command = "python -c \"from pathlib import Path; n=len(list(Path('mcp-server/rynix_mcp/knowledge/wstg').rglob('WSTG-*.md'))); assert n>=100, n\""
+
+[[evidence]]
+id = "plugin-manifest-count"
+kind = "shell"
+command = "python -c \"from pathlib import Path; n=len(list(Path('plugins').glob('*.toml'))); assert n>=7, n\""
+
+[[evidence]]
+id = "no-agent-guides-runtime"
+kind = "grep"
+pattern = "run_agent-guides_scan"
+paths = ["mcp-server/", "rynix-core/"]
+expect = "zero_matches"
+
+[[evidence]]
+id = "no-autopentest-tools"
+kind = "grep"
+pattern = "autopentest-tools"
+paths = ["mcp-server/rynix_mcp/knowledge/"]
+expect = "zero_matches"
+
+[[evidence]]
+id = "runtime-parity"
+kind = "shell"
+command = "python scripts/verify_runtime_parity.py"

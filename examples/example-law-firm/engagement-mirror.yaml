@@ -1,0 +1,29 @@
+name: "example law-firm application Mirror IDOR Matrix"
+authorized_by: "Security Team — local mirror only"
+authorization_ref: "RYNIX-MIRROR-LOCAL"
+
+target:
+  base_url: "http://127.0.0.1:8001"
+
+rules_of_engagement:
+  - "Mirror docker stack only — no production probes without explicit approval."
+  - "No denial-of-service or destructive payloads."
+  - "IDOR matrix via Rynix compare_role_response with session evidence."
+
+scope:
+  allow:
+    hosts: ["127.0.0.1", "localhost"]
+    cidrs: []
+    ports: [8001, 80, 443]
+  deny:
+    hosts: []
+    paths: ["*/logout", "*/delete*"]
+
+scopes_to_run:
+  - access_control
+  - auth
+
+limits:
+  max_requests_per_scope: 100
+  rate_limit_per_sec: 8
+  request_timeout_s: 30

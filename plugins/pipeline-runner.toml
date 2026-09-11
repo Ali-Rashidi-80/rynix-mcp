@@ -1,0 +1,9 @@
+id = "pipeline-runner"
+display_name = "Rynix Stage Pipeline"
+binary = ""
+requires_scope_check = false
+requires_llm = false
+output_format = "agent_playbook"
+mcp_tool = "plugin_pipeline_runner"
+phase = "6e"
+enabled = true

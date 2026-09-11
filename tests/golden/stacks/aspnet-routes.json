@@ -1,0 +1,13 @@
+{
+  "stack": "aspnet",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/values"
+    },
+    {
+      "method": "POST",
+      "path": "/api/values/{id}"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+id = "engagement"
+display_name = "Rynix Engagement Guard"
+binary = ""
+requires_scope_check = false
+output_format = "yaml"
+mcp_tool = "plugin_engagement_delegate"
+phase = "6b"
+enabled = true

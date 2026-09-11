@@ -1,0 +1,9 @@
+{
+  "stack": "nextjs",
+  "frontend_routes": [
+    {
+      "path": "/dashboard",
+      "file": "app/dashboard/page.tsx"
+    }
+  ]
+}

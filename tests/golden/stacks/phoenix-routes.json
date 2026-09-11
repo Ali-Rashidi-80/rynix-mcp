@@ -1,0 +1,9 @@
+{
+  "stack": "phoenix",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/users"
+    }
+  ]
+}

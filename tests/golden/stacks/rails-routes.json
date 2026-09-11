@@ -1,0 +1,13 @@
+{
+  "stack": "rails",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/users"
+    },
+    {
+      "method": "POST",
+      "path": "/users/:id"
+    }
+  ]
+}

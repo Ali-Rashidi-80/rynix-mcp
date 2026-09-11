@@ -1,0 +1,60 @@
+# Rust build artifacts
+target/
+**/target/
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+*.egg
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# Pentest / engagement output (may contain response bodies)
+pentest_output/
+*.sarif
+
+# Local binaries (users build/install)
+bin/
+
+# Agent scratch
+.agents/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.code-workspace
+
+# Local MCP / IDE configs with machine-specific absolute paths
+cursor.windows.json
+cursor.local.json
+mcp.json
+
+# mcp-server: only package, tests, and lockfiles (block stray export_report probe dirs)
+mcp-server/*
+!mcp-server/pyproject.toml
+!mcp-server/uv.lock
+!mcp-server/rynix_mcp/
+!mcp-server/tests/
+
+# Probe accounts with real credentials (use examples/probe-accounts.example.json)
+.pentest/probe-accounts.json
+**/probe-accounts.json
+!examples/probe-accounts.example.json
+
+# Windows / PyInstaller (if added later)
+*.spec.bak

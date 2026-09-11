@@ -1,0 +1,9 @@
+id = "browser-debug"
+display_name = "Rynix Browser Debug Proxy"
+binary = ""
+requires_scope_check = true
+never_default = true
+output_format = "json"
+mcp_tool = "plugin_browser_debug"
+phase = "6d"
+enabled = false

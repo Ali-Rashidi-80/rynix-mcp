@@ -1,0 +1,9 @@
+{
+  "stack": "adonisjs",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/users"
+    }
+  ]
+}

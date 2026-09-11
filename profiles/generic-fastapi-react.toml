@@ -1,0 +1,45 @@
+name = "generic-fastapi-react"
+display_name = "Generic FastAPI + React"
+stack = ["fastapi", "react", "postgresql"]
+
+[paths]
+api_endpoints = "backend/app/api/v1/endpoints"
+frontend_src = "src"
+auth_deps = "backend/app/api/deps.py"
+
+[scope]
+allow_hosts = ["localhost", "127.0.0.1", "::1", "*.localhost"]
+
+[auth]
+login_path = "/api/v1/auth/login"
+content_type = "application/x-www-form-urlencoded"
+username_field = "username"
+password_field = "password"
+token_field = "access_token"
+auth_markers = ["get_current_user", "require_roles", "Depends"]
+
+[brief]
+concerns = [
+    "IDOR on resource paths with {id} parameters",
+    "Missing auth dependencies on mutating endpoints",
+    "Exposed admin or debug routes",
+]
+focus = [
+    "Compare low-privilege vs high-privilege tokens on /api/*/{id} routes",
+    "Verify RBAC on POST/PUT/PATCH/DELETE handlers",
+]
+context = [
+    "Generic FastAPI + React stack — adjust .pentest/profile.toml per repo",
+]
+
+[risk_keywords]
+high = ["purge", "bulk-delete", "backup", "admin", "debug"]
+block_unless_flag = ["sms", "send-sms"]
+
+[[risk.idor_role_pairs]]
+low = "user"
+high = "admin"
+
+[[risk.idor_role_pairs]]
+low = "viewer"
+high = "editor"

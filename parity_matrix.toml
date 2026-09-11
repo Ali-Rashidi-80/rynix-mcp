@@ -1,0 +1,55 @@
+# Runtime parity matrix — neutral slugs map to Rynix plugin_id (no competitor names in tracked files).
+
+[[folder]]
+slug = "scanner-templates"
+rynix_plugin = "template-scan"
+strategy = "binary_wrap"
+test = "tests/integration/test_template_scan_parity.py"
+
+[[folder]]
+slug = "wstg-orchestrator"
+rynix_plugin = "wstg"
+strategy = "native+docker"
+test = "tests/integration/test_wstg_parity.py"
+
+[[folder]]
+slug = "technique-guides"
+rynix_plugin = "agent-guides"
+strategy = "host_agent"
+test = "tests/integration/test_agent_guides_parity.py"
+
+[[folder]]
+slug = "engagement-guard"
+rynix_plugin = "engagement"
+strategy = "rynix_native"
+test = "tests/integration/test_engagement_parity.py"
+
+[[folder]]
+slug = "whitebox-analyzer"
+rynix_plugin = "whitebox-scan"
+strategy = "host_agent"
+test = "tests/integration/test_whitebox_parity.py"
+
+[[folder]]
+slug = "stage-pipeline"
+rynix_plugin = "pipeline-runner"
+strategy = "host_agent"
+test = "tests/integration/test_pipeline_parity.py"
+
+[[folder]]
+slug = "range-bench"
+rynix_plugin = "cyber-range"
+strategy = "host_agent"
+test = "tests/integration/test_cyber_range_parity.py"
+
+[[folder]]
+slug = "multi-agent-flow"
+rynix_plugin = "agent-orchestrator"
+strategy = "host_agent"
+test = "tests/integration/test_orchestrator_parity.py"
+
+[[folder]]
+slug = "browser-bridge"
+rynix_plugin = "browser-debug"
+strategy = "host_agent"
+test = "tests/integration/test_browser_debug_parity.py"

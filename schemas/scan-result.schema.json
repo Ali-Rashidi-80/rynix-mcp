@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rynix.local/schemas/scan-result.schema.json",
+  "title": "RynixScanResult",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "repo_path", "routes", "duration_ms"],
+  "properties": {
+    "schema": { "const": "rynix.scan.v1" },
+    "repo_path": { "type": "string" },
+    "profile_hint": { "type": ["string", "null"] },
+    "modules_scanned": { "type": "integer", "minimum": 0 },
+    "routes": { "type": "array" },
+    "frontend_routes": { "type": "array" },
+    "rbac_hints": { "type": "array" },
+    "risk_surfaces": { "type": "array" },
+    "secret_hits": { "type": "array" },
+    "taint_hints": { "type": "array" },
+    "warnings": { "type": "array", "items": { "type": "string" } },
+    "duration_ms": { "type": "integer", "minimum": 0 }
+  }
+}

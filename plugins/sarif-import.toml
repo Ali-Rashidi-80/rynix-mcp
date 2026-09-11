@@ -1,0 +1,10 @@
+id = "sarif-import"
+display_name = "Rynix SARIF Import"
+binary = ""
+requires_scope_check = false
+requires_llm = false
+never_default = false
+output_format = "sarif"
+mcp_tool = "plugin_sarif_import"
+phase = "6b"
+enabled = true

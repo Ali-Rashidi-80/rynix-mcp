@@ -1,0 +1,8 @@
+[permissions]
+# Deny live probes until agent sets allow_live=true on http_probe / auth_login / compare_role_response
+live_probe = false
+allow_write = false
+allow_sms = false
+
+[scope]
+notes = "example law-firm application production — prefer mirror http://127.0.0.1:8001 for IDOR matrix"

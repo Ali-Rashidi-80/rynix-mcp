@@ -1,0 +1,70 @@
+{
+  "schema": "rynix.scan.v1",
+  "repo_path": "examples/example-law-firm",
+  "profile_hint": "example-law-firm",
+  "modules_scanned": 1,
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/case-fee-receipts/{event_id}/purge",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 7,
+      "handler": "post_case_fee_receipt_purge",
+      "auth_required": true,
+      "auth_hint": "async def post_case_fee_receipt_purge(event_id: str, user=Depends(require_roles)):  # noqa: F821",
+      "idor_risk_score": 55
+    },
+    {
+      "method": "POST",
+      "path": "/expenses/{expense_id}/purge",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 12,
+      "handler": "post_expense_purge",
+      "auth_required": true,
+      "auth_hint": "async def post_expense_purge(expense_id: str, user=Depends(require_roles)):  # noqa: F821",
+      "idor_risk_score": 55
+    }
+  ],
+  "frontend_routes": [],
+  "rbac_hints": [
+    {
+      "endpoint": "POST /case-fee-receipts/{event_id}/purge",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 7,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    },
+    {
+      "endpoint": "POST /expenses/{expense_id}/purge",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 12,
+      "roles_detected": [],
+      "abac_helpers": [],
+      "idor_risk_score": 55
+    }
+  ],
+  "risk_surfaces": [
+    {
+      "path": "/case-fee-receipts/{event_id}/purge",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 7,
+      "reason": "high-risk keyword: purge",
+      "severity": "critical",
+      "rule_id": "RYNIX-STATIC-RISK"
+    },
+    {
+      "path": "/expenses/{expense_id}/purge",
+      "method": "POST",
+      "file": "backend/app/api/v1/endpoints/finance.py",
+      "line": 12,
+      "reason": "high-risk keyword: purge",
+      "severity": "critical",
+      "rule_id": "RYNIX-STATIC-RISK"
+    }
+  ],
+  "secret_hits": [],
+  "warnings": [],
+  "duration_ms": 4
+}

@@ -1,0 +1,13 @@
+{
+  "stack": "flask",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/users"
+    },
+    {
+      "method": "POST",
+      "path": "/api/login"
+    }
+  ]
+}

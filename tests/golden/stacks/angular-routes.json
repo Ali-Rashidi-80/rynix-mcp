@@ -1,0 +1,13 @@
+{
+  "stack": "angular",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/admin"
+    },
+    {
+      "method": "GET",
+      "path": "/reports"
+    }
+  ]
+}

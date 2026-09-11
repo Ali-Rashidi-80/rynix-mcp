@@ -1,0 +1,106 @@
+---
+name: openapi
+description: Security testing for OpenAPI-described APIs — spec vs implementation drift and undocumented paths
+---
+
+# OpenAPI
+
+Security testing for OpenAPI-described APIs — spec vs implementation drift and undocumented paths. Map routes with `analyze_repo` (stack hint `openapi`), then validate authorization with live probes — never trust framework defaults.
+
+## Attack Surface
+
+**Core**
+- Static `openapi.json` / `swagger.yaml` vs live routes
+- Security schemes: bearer, apiKey, oauth2
+- Undocumented paths found via fuzzing vs spec
+
+**Usage**
+- Merge spec endpoints with `analyze_repo` routes for gap analysis
+
+## Auth markers (static analysis)
+
+Rynix `analyze_repo` flags routes containing: `security`, `bearerAuth`, `apiKey`, `oauth2`, `components.securitySchemes`.
+
+## High-Value Targets
+
+- Spec lists auth but implementation omits on subset of paths
+- `deprecated` endpoints still live
+- Internal paths in spec marked public
+
+## Reconnaissance
+
+```
+GET /openapi.json
+GET /swagger.json
+# Diff with list_api_routes output
+```
+
+## Key Vulnerabilities
+
+### Spec drift
+- Implementation accepts methods not in spec (verb tampering)
+- Required security scheme not enforced on all operations
+
+### IDOR
+- Path params in spec without tenant scoping documented — test anyway
+
+## Stack-specific probe matrix
+
+| Spec op | security field | live |
+|---------|----------------|------|
+| listed | bearer | enforce |
+| undocumented | fuzz | drift |
+| deprecated | should 410 | still live? |
+
+## Testing Methodology
+
+1. **Enumerate** — `analyze_repo` + `list_api_routes` / `list_frontend_routes` for stack `openapi`.
+2. **RBAC matrix** — `rbac_matrix` and `high_risk_surfaces` for IDOR candidates.
+3. **Cross-role probes** — `compare_role_response` and `run_idor_matrix` on object IDs in paths.
+4. **Config & debug** — `http_probe` admin, actuator, swagger, and debug paths from recon section.
+5. **Record evidence** — `record_finding` only after reproducible probe output.
+
+## Stack detection signals
+
+- Set `stack_hints=["openapi"]` in profile `[scanner]` for dedicated extractor routing.
+- Review `analyze_repo` warnings for `generic_extractor_used` — expand `api_roots` if triggered.
+- Cross-check routes from `list_api_routes` against auth markers listed above.
+
+## Bypass techniques
+
+- Content-Type and method override (`X-HTTP-Method-Override`, `_method` parameter).
+- Path normalization (`/api/users/1/`, `/api/users/1%2f`, case variants).
+- Duplicate parameters and JSON key precedence in binding layers.
+- Race parallel requests on state-changing endpoints (limits, balances, invites).
+
+## Validation requirements
+
+- Side-by-side `compare_role_response` for owner vs non-owner on object IDs.
+- Static `rbac_matrix` citation (file:line) for routes missing auth markers.
+- Minimal safe payloads only — document exact request that proves the flaw.
+- Session ID on every live tool call; findings via `record_finding` with probe hash.
+
+
+## Industrial deep dive
+### Spec drift fuzz
+Operations in spec vs 404/405 on live server — both directions.
+
+### Security scheme gaps
+`bearerAuth` in spec but not enforced on subset of paths.
+
+### Undocumented admin paths
+Fuzz from `analyze_repo` not present in OpenAPI.
+
+## Rynix workflow
+
+1. `scope_check` + `register_scope` for target host.
+2. `analyze_repo` with `stack_hints=["openapi"]` — review `detected_stack` confidence.
+3. `rbac_matrix` + `high_risk_surfaces` — prioritize endpoints lacking auth markers.
+4. `http_probe` / `compare_role_response` / `run_idor_matrix` for evidence.
+5. `track_wstg_test` + `export_report` with session ID on every call.
+
+## Evidence requirements
+
+- Request/response diff or status/body hash from `compare_role_response`.
+- Repo citation (file:line) when static analysis informed the probe.
+- No severity without reproducible probe output.

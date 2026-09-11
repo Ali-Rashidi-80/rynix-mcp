@@ -1,0 +1,13 @@
+{
+  "stack": "django",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "users/"
+    },
+    {
+      "method": "GET",
+      "path": "users/<int:pk>/"
+    }
+  ]
+}

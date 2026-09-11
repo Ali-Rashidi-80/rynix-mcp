@@ -1,0 +1,13 @@
+{
+  "stack": "vue",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/home"
+    },
+    {
+      "method": "GET",
+      "path": "/settings"
+    }
+  ]
+}

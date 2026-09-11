@@ -1,0 +1,9 @@
+id = "agent-guides"
+display_name = "Rynix Technique Guides"
+binary = ""
+requires_scope_check = true
+requires_llm = false
+output_format = "agent_playbook"
+mcp_tool = "plugin_agent_guides"
+phase = "6c"
+enabled = true

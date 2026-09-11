@@ -1,0 +1,8 @@
+id = "template-scan"
+display_name = "Rynix Template Scanner"
+binary = "template-scan"
+requires_scope_check = true
+output_format = "jsonl"
+mcp_tool = "plugin_template_scan"
+phase = "6a"
+enabled = true

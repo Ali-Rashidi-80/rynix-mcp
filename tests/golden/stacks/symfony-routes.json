@@ -1,0 +1,9 @@
+{
+  "stack": "symfony",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/users"
+    }
+  ]
+}

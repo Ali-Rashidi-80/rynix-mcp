@@ -1,0 +1,108 @@
+[project]
+name = "rynix-mcp"
+version = "0.1.0"
+description = "Rynix — Security MCP Platform (Rāy + Nix)"
+requires-python = ">=3.12,<3.15"
+license = { text = "MIT" }
+dependencies = [
+    "mcp>=1.9.0,<2",
+    "httpx>=0.28.0",
+    "anyio>=4.0.0",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+rynix-mcp = "rynix_mcp.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["rynix_mcp"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"../profiles" = "rynix_mcp/_assets/profiles"
+"../plugins" = "rynix_mcp/_assets/plugins"
+"../schemas" = "rynix_mcp/_assets/schemas"
+"../templates" = "rynix_mcp/_assets/templates"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "jsonschema>=4.0",
+    "ruff>=0.9",
+    "black>=25.0",
+    "isort>=6.0",
+    "mypy>=1.14",
+    "pylint>=3.3",
+    "types-PyYAML>=6.0",
+]
+browser = ["playwright>=1.40"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["rynix_mcp", "tests"]
+extend-exclude = ["rynix_mcp/knowledge"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+ignore = ["E501", "RUF001", "RUF002", "RUF100", "SIM103", "SIM105", "SIM118"]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+force-single-line = false
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "B011"]
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+include = '\.pyi?$'
+extend-exclude = '/(rynix_mcp/knowledge)/'
+
+[tool.isort]
+profile = "black"
+line_length = 100
+src_paths = ["rynix_mcp", "tests"]
+skip_glob = ["rynix_mcp/knowledge/**"]
+
+[tool.mypy]
+python_version = "3.12"
+packages = ["rynix_mcp"]
+exclude = ["rynix_mcp/knowledge"]
+ignore_missing_imports = true
+warn_unused_ignores = false
+no_implicit_optional = false
+check_untyped_defs = false
+disable_error_code = ["union-attr", "index", "arg-type", "assignment", "return-value", "call-arg", "var-annotated"]
+
+[tool.pylint.main]
+py-version = "3.12"
+jobs = 0
+ignore-paths = ["rynix_mcp/knowledge"]
+fail-under = 9.5
+
+[tool.pylint.messages_control]
+disable = [
+    "missing-module-docstring",
+    "missing-class-docstring",
+    "missing-function-docstring",
+    "too-few-public-methods",
+    "too-many-arguments",
+    "too-many-locals",
+    "too-many-branches",
+    "too-many-statements",
+    "duplicate-code",
+    "import-outside-toplevel",
+    "broad-exception-caught",
+    "line-too-long",
+    "cyclic-import",
+]

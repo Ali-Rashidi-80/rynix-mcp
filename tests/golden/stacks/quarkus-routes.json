@@ -1,0 +1,9 @@
+{
+  "stack": "quarkus",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/users"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+id = "cyber-range"
+display_name = "Rynix Cyber Range"
+binary = ""
+requires_scope_check = false
+requires_llm = false
+output_format = "json"
+mcp_tool = "plugin_cyber_range"
+phase = "6e"
+enabled = true

@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "description": "Canonical WSTG test IDs shipped in Rynix knowledge (subset gate)",
+  "required_ids": [
+    "WSTG-INFO-01",
+    "WSTG-CONF-01",
+    "WSTG-ATHZ-01",
+    "WSTG-ATHN-01",
+    "WSTG-INPV-01",
+    "WSTG-ERRH-01",
+    "WSTG-CRYP-01",
+    "WSTG-BUSL-01",
+    "WSTG-CLNT-01",
+    "WSTG-APIT-01"
+  ]
+}

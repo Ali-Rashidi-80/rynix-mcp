@@ -1,0 +1,13 @@
+{
+  "stack": "nuxt",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/"
+    },
+    {
+      "method": "GET",
+      "path": "/users"
+    }
+  ]
+}

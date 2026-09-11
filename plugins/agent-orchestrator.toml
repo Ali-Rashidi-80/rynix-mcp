@@ -1,0 +1,10 @@
+id = "agent-orchestrator"
+display_name = "Rynix Agent Orchestrator"
+binary = ""
+requires_scope_check = true
+requires_docker = false
+never_default = true
+output_format = "json"
+mcp_tool = "plugin_agent_orchestrator"
+phase = "6d"
+enabled = false

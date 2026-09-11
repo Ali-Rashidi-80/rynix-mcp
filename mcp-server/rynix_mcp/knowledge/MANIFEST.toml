@@ -1,0 +1,974 @@
+# Auto-generated knowledge manifest — synced from disk
+signed = true
+
+[[entry]]
+path = "THIRD_PARTY.md"
+status = "complete"
+
+[[entry]]
+path = "analysis/counterevidence.md"
+status = "complete"
+
+[[entry]]
+path = "analysis/fix_verification.md"
+status = "complete"
+
+[[entry]]
+path = "analysis/owasp-static-audit-prompt.md"
+status = "complete"
+
+[[entry]]
+path = "analysis/severity_calibration.md"
+status = "complete"
+
+[[entry]]
+path = "analysis/source_aware_discovery.md"
+status = "complete"
+
+[[entry]]
+path = "cloud/aws.md"
+status = "complete"
+
+[[entry]]
+path = "cloud/azure.md"
+status = "complete"
+
+[[entry]]
+path = "cloud/gcp.md"
+status = "complete"
+
+[[entry]]
+path = "cloud/kubernetes.md"
+status = "complete"
+
+[[entry]]
+path = "coordination/mcp-integration-patterns.md"
+status = "complete"
+
+[[entry]]
+path = "coordination/root_agent.md"
+status = "complete"
+
+[[entry]]
+path = "coordination/source_aware_whitebox.md"
+status = "complete"
+
+[[entry]]
+path = "custom/api_spec_testing.md"
+status = "complete"
+
+[[entry]]
+path = "custom/dependency_cve_scanning.md"
+status = "complete"
+
+[[entry]]
+path = "custom/genai_llm_security_2026.md"
+status = "complete"
+
+[[entry]]
+path = "custom/npx_confusion.md"
+status = "complete"
+
+[[entry]]
+path = "custom/source_aware_sast.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/actix.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/adonisjs.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/angular.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/aspnet.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/axum.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/chi.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/django.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/echo.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/express.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/fastapi.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/fastify.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/fiber.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/flask.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/gin.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/graphql.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/hono.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/koa.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/ktor.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/laravel.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/nestjs.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/nextjs.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/nuxt.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/openapi.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/phoenix.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/quarkus.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/rails.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/react.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/sinatra.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/spring.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/sveltekit.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/symfony.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/trpc.md"
+status = "complete"
+
+[[entry]]
+path = "frameworks/vue.md"
+status = "complete"
+
+[[entry]]
+path = "policy/exploit-classification.md"
+status = "complete"
+
+[[entry]]
+path = "policy/honesty-framework.md"
+status = "complete"
+
+[[entry]]
+path = "policy/reproducibility.md"
+status = "complete"
+
+[[entry]]
+path = "policy/scope-rules.md"
+status = "complete"
+
+[[entry]]
+path = "quality/quality-gates.md"
+status = "complete"
+
+[[entry]]
+path = "roles/analyzer.md"
+status = "complete"
+
+[[entry]]
+path = "roles/exploiter.md"
+status = "complete"
+
+[[entry]]
+path = "roles/reporter.md"
+status = "complete"
+
+[[entry]]
+path = "roles/scout.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/access-control.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/api-testing.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/authentication.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/business-logic.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/clickjacking.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/cors.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/cross-site-scripting.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/csrf.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/dom-based.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/essential-skills.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/file-upload.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/graphql.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/host-header.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/http-request-smuggling.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/information-disclosure.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/insecure-deserialization.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/jwt.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/nosql-injection.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/oauth.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/os-command-injection.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/path-traversal.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/prototype-pollution.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/race-conditions.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/sql-injection.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/ssrf.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/ssti.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/web-cache-deception.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/web-cache-poisoning.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/web-llm-attacks.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/websockets.md"
+status = "complete"
+
+[[entry]]
+path = "techniques/xxe.md"
+status = "complete"
+
+[[entry]]
+path = "tools/template-scan/usage.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/agentic-system-security.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/argument-injection.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/authentication-jwt.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/broken-function-level-authorization.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/browser-security.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/header-injection.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/idor.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/insecure-file-uploads.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/llm-prompt-injection.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/mass-assignment.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/open-redirect.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/path-traversal-lfi-rfi.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/rce.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/reconnaissance--asset-discovery.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/reconnaissance--infrastructure-lifecycle.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/scan_modes--deep.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/scan_modes--diff.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/scan_modes--quick.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/scan_modes--standard.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/semantic-confusion.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/subdomain-takeover.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/technologies--active-directory.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/technologies--auth0.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/technologies--electron-desktop-apps.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/technologies--firebase.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/technologies--grafana-prometheus.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/technologies--llm-applications.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/technologies--supabase.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/tooling--agent-browser.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/tooling--dns-enum-cli.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/tooling--fuzz-cli.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/tooling--http-probe-cli.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/tooling--hurl.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/tooling--hypothesis.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/tooling--nmap.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/tooling--port-scan-cli.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/tooling--python.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/tooling--semgrep.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/tooling--sql-injection-cli.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/tooling--web-crawler.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/weak-password-detection.md"
+status = "complete"
+
+[[entry]]
+path = "vuln-classes/xss.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/01-information-gathering/WSTG-INFO-01.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/01-information-gathering/WSTG-INFO-02.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/01-information-gathering/WSTG-INFO-03.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/01-information-gathering/WSTG-INFO-04.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/01-information-gathering/WSTG-INFO-05.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/01-information-gathering/WSTG-INFO-06.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/01-information-gathering/WSTG-INFO-07.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/01-information-gathering/WSTG-INFO-08.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/01-information-gathering/WSTG-INFO-09.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/01-information-gathering/WSTG-INFO-10.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/02-configuration/WSTG-CONF-01.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/02-configuration/WSTG-CONF-02.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/02-configuration/WSTG-CONF-03.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/02-configuration/WSTG-CONF-04.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/02-configuration/WSTG-CONF-05.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/02-configuration/WSTG-CONF-06.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/02-configuration/WSTG-CONF-07.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/02-configuration/WSTG-CONF-08.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/02-configuration/WSTG-CONF-09.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/02-configuration/WSTG-CONF-10.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/02-configuration/WSTG-CONF-11.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/02-configuration/WSTG-CONF-12.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/02-configuration/WSTG-CONF-13.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/02-configuration/WSTG-CONF-14.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/03-identity-management/WSTG-IDNT-01.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/03-identity-management/WSTG-IDNT-02.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/03-identity-management/WSTG-IDNT-03.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/03-identity-management/WSTG-IDNT-04.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/03-identity-management/WSTG-IDNT-05.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/04-authentication/WSTG-ATHN-01.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/04-authentication/WSTG-ATHN-02.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/04-authentication/WSTG-ATHN-03.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/04-authentication/WSTG-ATHN-04.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/04-authentication/WSTG-ATHN-05.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/04-authentication/WSTG-ATHN-06.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/04-authentication/WSTG-ATHN-07.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/04-authentication/WSTG-ATHN-08.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/04-authentication/WSTG-ATHN-09.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/04-authentication/WSTG-ATHN-10.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/04-authentication/WSTG-ATHN-11.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/05-authorization/WSTG-ATHZ-01.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/05-authorization/WSTG-ATHZ-02.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/05-authorization/WSTG-ATHZ-03.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/05-authorization/WSTG-ATHZ-04.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/05-authorization/WSTG-ATHZ-05.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/06-session-management/WSTG-SESS-01.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/06-session-management/WSTG-SESS-02.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/06-session-management/WSTG-SESS-03.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/06-session-management/WSTG-SESS-04.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/06-session-management/WSTG-SESS-05.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/06-session-management/WSTG-SESS-06.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/06-session-management/WSTG-SESS-07.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/06-session-management/WSTG-SESS-08.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/06-session-management/WSTG-SESS-09.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/06-session-management/WSTG-SESS-10.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/06-session-management/WSTG-SESS-11.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/07-input-validation/WSTG-INPV-01.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/07-input-validation/WSTG-INPV-02.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/07-input-validation/WSTG-INPV-03.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/07-input-validation/WSTG-INPV-04.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/07-input-validation/WSTG-INPV-05.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/07-input-validation/WSTG-INPV-06.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/07-input-validation/WSTG-INPV-07.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/07-input-validation/WSTG-INPV-08.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/07-input-validation/WSTG-INPV-09.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/07-input-validation/WSTG-INPV-10.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/07-input-validation/WSTG-INPV-11.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/07-input-validation/WSTG-INPV-12.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/07-input-validation/WSTG-INPV-13.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/07-input-validation/WSTG-INPV-14.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/07-input-validation/WSTG-INPV-15.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/07-input-validation/WSTG-INPV-16.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/07-input-validation/WSTG-INPV-17.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/07-input-validation/WSTG-INPV-18.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/07-input-validation/WSTG-INPV-19.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/07-input-validation/WSTG-INPV-20.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/08-error-handling/WSTG-ERRH-01.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/08-error-handling/WSTG-ERRH-02.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/09-cryptography/WSTG-CRYP-01.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/09-cryptography/WSTG-CRYP-02.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/09-cryptography/WSTG-CRYP-03.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/09-cryptography/WSTG-CRYP-04.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/10-business-logic/WSTG-BUSL-01.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/10-business-logic/WSTG-BUSL-02.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/10-business-logic/WSTG-BUSL-03.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/10-business-logic/WSTG-BUSL-04.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/10-business-logic/WSTG-BUSL-05.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/10-business-logic/WSTG-BUSL-06.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/10-business-logic/WSTG-BUSL-07.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/10-business-logic/WSTG-BUSL-08.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/10-business-logic/WSTG-BUSL-09.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/10-business-logic/WSTG-BUSL-10.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/11-client-side/WSTG-CLNT-01.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/11-client-side/WSTG-CLNT-02.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/11-client-side/WSTG-CLNT-03.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/11-client-side/WSTG-CLNT-04.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/11-client-side/WSTG-CLNT-05.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/11-client-side/WSTG-CLNT-06.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/11-client-side/WSTG-CLNT-07.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/11-client-side/WSTG-CLNT-08.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/11-client-side/WSTG-CLNT-09.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/11-client-side/WSTG-CLNT-10.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/11-client-side/WSTG-CLNT-11.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/11-client-side/WSTG-CLNT-12.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/11-client-side/WSTG-CLNT-13.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/11-client-side/WSTG-CLNT-14.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/12-api-testing/WSTG-APIT-01.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/12-api-testing/WSTG-APIT-02.md"
+status = "complete"
+
+[[entry]]
+path = "wstg/12-api-testing/WSTG-APIT-03.md"
+status = "complete"

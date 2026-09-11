@@ -1,0 +1,4 @@
+[permissions]
+live_probe = false
+allow_write = false
+allow_sms = false

@@ -1,0 +1,9 @@
+id = "wstg"
+display_name = "OWASP WSTG Checklist"
+source_path = "mcp-server/rynix_mcp/knowledge/wstg"
+binary = ""
+requires_scope_check = false
+output_format = "json"
+mcp_tool = "plugin_wstg_checklist"
+phase = "6a"
+enabled = true

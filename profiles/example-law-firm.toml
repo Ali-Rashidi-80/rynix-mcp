@@ -1,0 +1,201 @@
+name = "example-law-firm"
+display_name = "Rynix Example: Law Firm ERP"
+stack = ["fastapi", "react-vite", "postgresql", "redis"]
+
+[scanner]
+api_roots = ["backend/app/api/v1/endpoints"]
+frontend_roots = ["src"]
+auth_markers = ["get_current_user", "require_roles", "check_case_access"]
+
+[paths]
+api_endpoints = "backend/app/api/v1/endpoints"
+frontend_src = "src"
+auth_deps = "backend/app/api/deps.py"
+
+[scope]
+# Override production hosts in the target repo `.pentest/profile.toml`.
+allow_hosts = ["localhost", "127.0.0.1", "::1"]
+
+[auth]
+login_path = "/api/v1/auth/login"
+content_type = "application/x-www-form-urlencoded"
+username_field = "username"
+password_field = "password"
+token_field = "access_token"
+auth_markers = [
+    "get_current_user",
+    "require_roles",
+    "check_case_access",
+    "require_case_finance_profile_reader",
+    "get_current_active_superuser",
+]
+
+[auth.captcha]
+path = "/api/v1/auth/captcha"
+markers = ["captcha", "CAPTCHA", "کد امنیتی"]
+
+[stealth.gate]
+query_param = "rynix_stealth_gate"
+cookie_name = "rynix_stealth_gate"
+secret_env = ["RYNIX_STEALTH_GATE_SECRET", "RYNIX_REMOTE_GATE_SECRET"]
+secret_key = "RYNIX_STEALTH_GATE_SECRET"
+secret_repo_files = [".env.local-mirror"]
+
+[brief]
+concerns = [
+    "IDOR across cases, clients, finance profiles, file preview tokens",
+    "RBAC bypass on finance purge (POST-only) and backup endpoints",
+    "Stealth gate public-prefix vs actual JWT requirements on privileged routes",
+    "JWT in localStorage / WebSocket token in query string (XSS/log leakage)",
+    "Debug impersonation routes must be absent in production",
+]
+focus = [
+    "POST /api/v1/finance/*/purge with high-privilege vs client tokens",
+    "GET/PATCH /api/v1/cases/{case_id} cross-role compare_role_response",
+    "GET /api/v1/clients/{client_id} assignment-scoped access",
+    "POST /api/v1/sync/ingest superuser-only despite stealth bypass",
+    "GET /api/v1/system/docker/* ADMIN-only observability",
+]
+context = [
+    "Example profile for a multi-role law-firm style FastAPI + React ERP",
+    "OAuth2 password form login; closed user registry",
+    "Optional API stealth gate — configure [stealth.gate] and scope in .pentest/profile.toml",
+    "Probe users belong in the target repo seed scripts — never commit credentials",
+]
+
+[risk_keywords]
+high = ["purge", "bulk-delete", "reverse", "backup", "password-reset", "impersonate", "docker"]
+block_unless_flag = ["sms", "send-sms"]
+
+[profile.roles.backend]
+all = ["ADMIN", "CEO", "LAWYER", "INTERN", "SECRETARY", "LEGAL_DEPUTY", "PSYCHOLOGIST", "CLIENT"]
+
+[profile.rbac.finance]
+purge_roles = ["CEO", "LEGAL_DEPUTY"]
+purge_methods = ["POST"]
+
+[profile.stealth]
+public_prefixes = ["/api/v1/auth", "/.well-known", "/api/v1/sync/ingest"]
+blocked_response_status = 502
+
+[profile.high_risk_routes]
+paths = [
+    "POST /api/v1/finance/*/purge",
+    "POST /api/v1/sync/ingest",
+    "POST /api/v1/users/*/password-reset",
+    "GET /api/v1/backups/*",
+    "GET /api/v1/system/docker/*",
+]
+
+[risk]
+object_paths_pattern = "/(cases|clients)/[^/?]+"
+collection_markers = ["/cases", "/clients"]
+office_roles = ["secretary", "admin", "ceo", "legal_deputy"]
+assigned_roles = ["lawyer", "intern", "psychologist"]
+shared_aggregates = ["/dashboard/summary", "/finance/cases/summary"]
+discovery_roles = ["ceo", "admin", "lawyer"]
+role_trust = { client = 0, intern = 1, psychologist = 1, lawyer = 2, secretary = 3, legal_deputy = 4, ceo = 5, admin = 6 }
+
+[[risk.idor_role_pairs]]
+low = "client"
+high = "lawyer"
+
+[[risk.idor_role_pairs]]
+low = "client"
+high = "ceo"
+
+[[risk.idor_role_pairs]]
+low = "client"
+high = "intern"
+
+[[risk.idor_role_pairs]]
+low = "client"
+high = "secretary"
+
+[[risk.idor_role_pairs]]
+low = "client"
+high = "admin"
+
+[[risk.idor_role_pairs]]
+low = "client"
+high = "legal_deputy"
+
+[[risk.idor_role_pairs]]
+low = "client"
+high = "psychologist"
+
+[[risk.idor_role_pairs]]
+low = "intern"
+high = "lawyer"
+
+[[risk.idor_role_pairs]]
+low = "intern"
+high = "ceo"
+
+[[risk.idor_role_pairs]]
+low = "intern"
+high = "psychologist"
+
+[[risk.idor_role_pairs]]
+low = "secretary"
+high = "lawyer"
+
+[[risk.idor_role_pairs]]
+low = "secretary"
+high = "ceo"
+
+[[risk.idor_role_pairs]]
+low = "secretary"
+high = "legal_deputy"
+
+[[risk.idor_role_pairs]]
+low = "lawyer"
+high = "ceo"
+
+[[risk.idor_role_pairs]]
+low = "lawyer"
+high = "legal_deputy"
+
+[[risk.idor_role_pairs]]
+low = "lawyer"
+high = "psychologist"
+
+[[risk.idor_role_pairs]]
+low = "ceo"
+high = "admin"
+
+[[risk.idor_role_pairs]]
+low = "legal_deputy"
+high = "ceo"
+
+[[risk.idor_role_pairs]]
+low = "legal_deputy"
+high = "client"
+
+[[risk.idor_role_pairs]]
+low = "psychologist"
+high = "client"
+
+[[risk.list_probe_paths]]
+method = "GET"
+path = "/api/v1/cases/"
+
+[[risk.list_probe_paths]]
+method = "GET"
+path = "/api/v1/clients/"
+
+[[risk.list_probe_paths]]
+method = "GET"
+path = "/api/v1/dashboard/summary"
+
+[[risk.list_probe_paths]]
+method = "GET"
+path = "/api/v1/finance/cases/summary"
+
+[[risk.object_templates]]
+method = "GET"
+path = "/api/v1/cases/{id}"
+
+[[risk.object_templates]]
+method = "GET"
+path = "/api/v1/clients/{id}"

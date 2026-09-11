@@ -1,0 +1,13 @@
+{
+  "stack": "actix",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/health"
+    },
+    {
+      "method": "POST",
+      "path": "/api/users/{id}"
+    }
+  ]
+}

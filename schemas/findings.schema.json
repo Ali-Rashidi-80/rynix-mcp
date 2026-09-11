@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rynix.local/schemas/findings.schema.json",
+  "title": "RynixFinding",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "severity", "title", "endpoint", "evidence"],
+  "properties": {
+    "id": { "type": "string" },
+    "severity": { "enum": ["critical", "high", "medium", "low", "info"] },
+    "title": { "type": "string" },
+    "endpoint": { "type": "string" },
+    "evidence": { "type": "string" },
+    "verified": { "type": "boolean", "default": false },
+    "source_plugin": { "type": "string", "default": "core" }
+  }
+}

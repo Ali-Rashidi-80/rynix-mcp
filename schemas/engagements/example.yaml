@@ -1,0 +1,63 @@
+# Example engagement. Copy this, point it at a target you are AUTHORIZED to test,
+# and use Rynix MCP tools (http_probe, run_idor_matrix, rynix_plugin_run) from Cursor.
+#
+# A great safe target to try first is a local OWASP Juice Shop:
+#   docker run --rm -p 3000:3000 bkimminich/juice-shop
+# then set base_url to http://127.0.0.1:3000 and hosts to ["127.0.0.1"].
+
+name: "Example Web App Assessment"
+authorized_by: "Security Team <security@example.com>"
+authorization_ref: "SOW-2026-001"
+
+target:
+  base_url: "http://127.0.0.1:3000"
+  # extra: ["http://127.0.0.1:3000/api"]   # optional additional seed targets
+
+rules_of_engagement:
+  - "Testing window: 2026-06-18 to 2026-06-25, business hours."
+  - "No denial-of-service or load testing."
+  - "No destructive payloads; use benign markers to prove impact."
+  - "Stop and report immediately if real customer data is encountered."
+
+scope:
+  allow:
+    hosts: ["127.0.0.1", "localhost"]
+    cidrs: []                      # e.g. ["10.10.0.0/24"] for literal-IP ranges
+    ports: [3000, 80, 443]         # empty list => any port
+  deny:
+    hosts: []
+    paths: ["*/logout", "*/delete*"]   # globbed URL paths the agents must not hit
+  # auto_subdomains: true            # follow discovered subdomains within the target's
+  #                                  # domain zone (e.g. app.staging.x.com -> *.staging.x.com);
+  #                                  # never crosses to unrelated domains or the apex.
+  # (You can also just list hosts above, or use "*.staging.x.com" as a wildcard host.)
+
+# Optional: authenticated testing. `cookie` and `headers` are auto-attached to every
+# in-scope request (you're logged in transparently); `credentials` are given to the agent
+# so it can perform the login flow and test privilege boundaries. Secrets are redacted in
+# saved evidence. Omit the whole block for unauthenticated testing.
+# auth:
+#   cookie: "session=abc123; csrf=xyz"
+#   headers:
+#     Authorization: "Bearer eyJhbGciOi..."
+#   credentials:
+#     username: "admin"
+#     password: "hunter2"
+#     login_url: "http://127.0.0.1:3000/rest/user/login"
+#     notes: "POST JSON {email,password}"
+# Which scope modules to run.
+scopes_to_run:
+  - recon
+  - auth
+  - injection
+  - access_control
+  - ssrf_xxe
+  - business_logic
+
+limits:
+  max_requests_per_scope: 250      # per-agent request budget
+  rate_limit_per_sec: 8            # global politeness throttle
+  request_timeout_s: 30
+  cli_timeout_s: 300
+  max_turns_per_agent: 60
+  verify_concurrency: 3            # how many findings to verify in parallel
