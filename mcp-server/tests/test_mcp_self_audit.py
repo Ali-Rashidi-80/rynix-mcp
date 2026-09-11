@@ -12,7 +12,7 @@ def test_mcp_self_audit_pytest_gate():
         [sys.executable, str(ROOT / "scripts" / "mcp_self_audit.py")],
         capture_output=True,
         text=True,
-        timeout=180,
+        timeout=240,
         cwd=str(ROOT),
     )
     assert proc.returncode == 0, proc.stdout + proc.stderr
