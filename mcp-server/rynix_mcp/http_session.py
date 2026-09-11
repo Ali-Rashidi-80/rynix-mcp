@@ -30,7 +30,9 @@ def _is_local(base_url: str) -> bool:
     if h in {"localhost", "::1"}:
         return True
     try:
-        return ipaddress.ip_address(h).is_loopback
+        addr = ipaddress.ip_address(h)
+        mapped = getattr(addr, "ipv4_mapped", None)
+        return addr.is_loopback or bool(mapped and mapped.is_loopback)
     except ValueError:
         return False
 
